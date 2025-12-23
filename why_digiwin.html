@@ -5,16 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Why Digiwin - Built for the Thai Factory Floor</title>
     
-    <!-- TAILWIND CSS (Design System Implementation) -->
+    <!-- Design System: External Libraries -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Segoe+UI&display=swap" rel="stylesheet">
 
-    <!-- MASTER DESIGN TOKENS -->
+    <!-- Design System: Configuration -->
     <script>
         tailwind.config = {
             theme: {
@@ -22,16 +18,16 @@
                     colors: {
                         primary: {
                             DEFAULT: '#00b2e4', // Digiwin Blue
-                            dark: '#0090b8',    // Hover/Active
+                            dark: '#0090b8',    // Hover State
                             light: '#33c2ea',
                         },
                         accent: {
-                            DEFAULT: '#ff6b35', // Foxconn Orange
+                            DEFAULT: '#ff6b35', // Orange (Foxconn/CTA)
                             hover: '#e55a2b',
                         },
                         neutral: {
+                            text: '#4a4a4a',    // Body Text
                             bg: '#f5f5f5',      // Light Background
-                            text: '#4a4a4a',    // Body Copy
                             dark: '#1a1a1a',    // Headings
                         }
                     },
@@ -43,8 +39,9 @@
                         'card': '12px',
                     },
                     boxShadow: {
-                        'card': '0 4px 6px rgba(0, 0, 0, 0.08)',
-                        'hover': '0 10px 15px rgba(0, 0, 0, 0.12)',
+                        'card': '0 4px 6px rgba(0, 0, 0, 0.05)',
+                        'hover': '0 10px 15px rgba(0, 0, 0, 0.1)',
+                        'glow': '0 0 20px rgba(0, 178, 228, 0.15)'
                     }
                 }
             }
@@ -55,40 +52,43 @@
         /* Global Styles */
         body { font-family: 'Segoe UI', 'Roboto', sans-serif; color: #4a4a4a; }
         
-        /* Hero Gradient */
+        /* Hero Background */
         .hero-bg {
             background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
         }
 
-        /* IT+OT Flow Animation Lines */
-        .flow-line {
-            position: relative;
+        /* IT+OT Interactive Styles */
+        .process-step {
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
         }
-        .flow-line::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 100%;
-            width: 50px;
-            height: 2px;
-            background: #e5e7eb;
-            transform: translateY(-50%);
-            z-index: 0;
+        .process-step:hover {
+            border-color: rgba(0, 178, 228, 0.3);
+            background-color: rgba(0, 178, 228, 0.02);
         }
-        @media (max-width: 768px) {
-            .flow-line::after {
-                top: 100%;
-                left: 50%;
-                width: 2px;
-                height: 30px;
-                transform: translateX(-50%);
-            }
+        .process-step.active {
+            border-color: #00b2e4;
+            background-color: #f0f9ff; /* Light Blue BG */
+            box-shadow: 0 4px 6px rgba(0, 178, 228, 0.1);
+        }
+        .process-step.active .step-icon {
+            background-color: #00b2e4;
+            color: white;
+        }
+
+        /* Animation for Content Switching */
+        .fade-in {
+            animation: fadeIn 0.4s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
 <body class="bg-white antialiased">
 
-<!-- COMPONENT: Header/Navigation (Global) -->
+    <!-- COMPONENT: Header/Navigation -->
     <header class="fixed w-full bg-white/95 backdrop-blur-sm shadow-sm z-50 h-20 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex justify-between items-center">
             <!-- Logo -->
@@ -102,27 +102,19 @@
 
             <!-- Desktop Nav -->
             <nav class="hidden md:flex space-x-8">
-                <!-- LINK 1: Why Digiwin -->
-                <a href="why_digiwin.html" class="text-neutral-text hover:text-primary font-medium text-sm transition-colors py-2 border-b-2 border-transparent hover:border-primary">Why Digiwin</a>
-                
-                <!-- LINK 2: Product Ecosystem -->
+                <a href="why_digiwin.html" class="text-primary font-bold text-sm transition-colors py-2 border-b-2 border-primary">Why Digiwin</a>
                 <a href="product_ecosystem.html" class="text-neutral-text hover:text-primary font-medium text-sm transition-colors py-2 border-b-2 border-transparent hover:border-primary">Product Ecosystem</a>
-                
-                <!-- LINK 3: Industry Solutions -->
                 <a href="industry_solutions.html" class="text-neutral-text hover:text-primary font-medium text-sm transition-colors py-2 border-b-2 border-transparent hover:border-primary">Industry Solutions</a>
-                
-                <!-- LINK 4: Resources (Placeholder) -->
                 <a href="#" class="text-neutral-text hover:text-primary font-medium text-sm transition-colors py-2 border-b-2 border-transparent hover:border-primary">Resources</a>
             </nav>
 
-            <!-- CTA & Utility -->
+            <!-- CTA -->
             <div class="flex items-center gap-4">
                 <div class="hidden md:flex text-sm text-gray-400 font-medium">
                     <span class="hover:text-primary cursor-pointer">TH</span>
                     <span class="mx-2">|</span>
                     <span class="text-primary font-bold">EN</span>
                 </div>
-                <!-- LINK 5: Contact Page -->
                 <a href="contact_partner.html" class="bg-primary hover:bg-primary-dark text-white px-6 py-2.5 rounded-btn text-sm font-bold shadow-lg shadow-primary/30 transition-all transform hover:-translate-y-0.5">
                     Become a Partner
                 </a>
@@ -133,108 +125,88 @@
     <!-- MAIN CONTENT -->
     <main class="pt-20">
 
-        <!-- SECTION: Hero (Manufacturing DNA) -->
+        <!-- SECTION: Hero -->
         <section class="hero-bg text-white py-24 relative overflow-hidden">
-            <!-- Abstract Grid Overlay -->
-            <div class="absolute inset-0 opacity-10" style="background-image: linear-gradient(#00b2e4 1px, transparent 1px), linear-gradient(90deg, #00b2e4 1px, transparent 1px); background-size: 40px 40px;"></div>
+            <div class="absolute inset-0 opacity-10" style="background-image: repeating-linear-gradient(45deg, #00b2e4 0, #00b2e4 1px, transparent 0, transparent 50%); background-size: 20px 20px;"></div>
             
             <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center gap-12">
-                <div class="md:w-1/2 z-10">
+                <div class="md:w-3/5 z-10">
                     <div class="inline-flex items-center px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary-light text-xs font-bold tracking-wide uppercase mb-6">
-                        <span class="w-2 h-2 rounded-full bg-accent mr-2 animate-pulse"></span>
-                        Strategic Principal
+                        <i class="fas fa-industry mr-2"></i> Since 1982
                     </div>
-                    <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-6">
-                        Built for the <span class="text-primary">Thai Factory Floor</span>,<br>
-                        Backed by <span class="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400">44 Years of DNA</span>.
+                    <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-6">
+                        Built for the <span class="text-primary">Thai Factory Floor</span>, <br>
+                        Backed by <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary-light to-white">44 Years of DNA</span>.
                     </h1>
-                    <p class="text-lg text-gray-300 mb-8 max-w-xl leading-relaxed">
-                        Generalist ERPs stop at the office door. We are manufacturing specialists who have solved the "Automation Gap" for 50,000+ factories across Asia.
+                    <p class="text-lg text-gray-300 mb-8 max-w-2xl leading-relaxed">
+                        Generalist ERPs stop at the office door. We are manufacturing specialists who have closed the "Automation Gap" for 50,000+ factories across Asia.
                     </p>
-                    <div class="flex flex-wrap gap-4 text-sm font-medium text-gray-400">
-                        <div class="flex items-center gap-2 px-4 py-2 bg-white/5 rounded-btn border border-white/10">
-                            <i class="fas fa-check-circle text-primary"></i> Native Thai Compliance
-                        </div>
-                        <div class="flex items-center gap-2 px-4 py-2 bg-white/5 rounded-btn border border-white/10">
-                            <i class="fas fa-check-circle text-primary"></i> Deep OT Integration
-                        </div>
-                    </div>
                 </div>
-                
-                <!-- Visual: Engineer Context -->
-                <div class="md:w-1/2 z-10 relative">
-                    <div class="bg-white/10 backdrop-blur-md border border-white/10 p-2 rounded-card shadow-2xl transform rotate-2">
-                        <div class="relative rounded-lg overflow-hidden h-64 md:h-80 bg-gray-800">
-                            <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Digiwin Engineer" class="object-cover w-full h-full opacity-80">
-                            <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/80 to-transparent p-6">
-                                <div class="text-accent font-bold text-xs uppercase mb-1">On-Site Implementation</div>
-                                <div class="text-white font-bold text-lg">Rayong Industrial Estate</div>
-                            </div>
+                <div class="md:w-2/5 relative z-10">
+                    <div class="bg-white/5 backdrop-blur-md border border-white/10 p-2 rounded-card shadow-2xl transform rotate-2">
+                        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Digiwin Engineer" class="rounded-lg opacity-80">
+                        <div class="absolute bottom-6 left-6 bg-black/60 backdrop-blur px-4 py-2 rounded-lg border border-white/20">
+                            <div class="text-xs text-primary-light font-bold uppercase">On-Site Validation</div>
+                            <div class="text-white font-bold">Rayong Plant</div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- SECTION: The Localization Moat (Pain vs Gain) -->
-        <section class="py-24 bg-neutral-bg">
+        <!-- SECTION: Localization (Interactive Toggle) -->
+        <section id="localization" class="py-24 bg-neutral-bg">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16">
+                <div class="text-center mb-12">
                     <h2 class="text-3xl font-bold text-neutral-dark mb-4">The "Localization" Myth</h2>
-                    <p class="text-gray-500 max-w-2xl mx-auto">
-                        Khun Somchai, you know the pain. You buy a global ERP, then spend 30% of your budget fixing it for Thai regulations. We solved that.
+                    <p class="text-gray-500 max-w-2xl mx-auto mb-8">
+                        Most global ERPs fail in Thailand because they ignore local tax/legal realities.
                     </p>
+                    
+                    <!-- Toggle Switch -->
+                    <div class="inline-flex bg-white p-1 rounded-card border border-gray-200 shadow-sm">
+                        <button onclick="toggleLoc('pain')" id="btn-pain" class="px-6 py-2 rounded-btn text-sm font-bold transition-all bg-red-500 text-white shadow-md">
+                            The Generic Pain
+                        </button>
+                        <button onclick="toggleLoc('gain')" id="btn-gain" class="px-6 py-2 rounded-btn text-sm font-bold text-gray-500 hover:text-primary transition-all">
+                            The Digiwin Advantage
+                        </button>
+                    </div>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
-                    <!-- Generic ERP (Pain) -->
-                    <div class="bg-white p-8 rounded-card shadow-card border-t-4 border-red-400 hover:shadow-hover transition-all">
+                <div class="max-w-4xl mx-auto">
+                    <!-- Pain Card -->
+                    <div id="card-pain" class="bg-white p-8 rounded-card shadow-card border-l-4 border-red-400 fade-in">
                         <div class="flex items-center gap-4 mb-6">
-                            <div class="w-12 h-12 bg-red-50 text-red-500 rounded-full flex items-center justify-center text-xl">
-                                <i class="fas fa-times"></i>
-                            </div>
+                            <div class="w-12 h-12 bg-red-50 text-red-500 rounded-full flex items-center justify-center text-xl"><i class="fas fa-times"></i></div>
                             <h3 class="text-xl font-bold text-neutral-dark">Generic Global ERP</h3>
                         </div>
                         <ul class="space-y-4">
                             <li class="flex items-start gap-3">
                                 <i class="fas fa-exclamation-triangle text-red-400 mt-1"></i>
-                                <div>
-                                    <strong class="text-neutral-dark text-sm">Plugin Dependency</strong>
-                                    <p class="text-xs text-gray-500">Requires expensive 3rd-party plugins just to generate e-Tax invoices.</p>
-                                </div>
+                                <div class="text-sm text-gray-600"><strong>Plugin Dependency:</strong> Requires expensive 3rd-party plugins just for e-Tax invoices.</div>
                             </li>
                             <li class="flex items-start gap-3">
                                 <i class="fas fa-exclamation-triangle text-red-400 mt-1"></i>
-                                <div>
-                                    <strong class="text-neutral-dark text-sm">WHT Nightmares</strong>
-                                    <p class="text-xs text-gray-500">Struggles with P.N.D. 3/53 multi-tier withholding logic, causing audit risks.</p>
-                                </div>
+                                <div class="text-sm text-gray-600"><strong>WHT Nightmares:</strong> Struggles with P.N.D. 3/53 logic, causing audit risks.</div>
                             </li>
                         </ul>
                     </div>
 
-                    <!-- Digiwin (Gain) -->
-                    <div class="bg-white p-8 rounded-card shadow-card border-t-4 border-primary transform md:scale-105 z-10 shadow-xl">
+                    <!-- Gain Card (Hidden by default) -->
+                    <div id="card-gain" class="hidden bg-white p-8 rounded-card shadow-card border-l-4 border-primary fade-in">
                         <div class="flex items-center gap-4 mb-6">
-                            <div class="w-12 h-12 bg-primary/10 text-primary rounded-full flex items-center justify-center text-xl">
-                                <i class="fas fa-check"></i>
-                            </div>
+                            <div class="w-12 h-12 bg-primary/10 text-primary rounded-full flex items-center justify-center text-xl"><i class="fas fa-check"></i></div>
                             <h3 class="text-xl font-bold text-neutral-dark">Digiwin Thailand</h3>
                         </div>
                         <ul class="space-y-4">
                             <li class="flex items-start gap-3">
                                 <i class="fas fa-check-circle text-primary mt-1"></i>
-                                <div>
-                                    <strong class="text-neutral-dark text-sm">Native e-Tax / e-Invoice</strong>
-                                    <p class="text-xs text-gray-500">Built directly into the core kernel. No plugins. No extra fees. RD Audit ready.</p>
-                                </div>
+                                <div class="text-sm text-gray-600"><strong>Native Compliance:</strong> e-Tax, e-Invoice, and WHT logic built into the core kernel. No plugins.</div>
                             </li>
                             <li class="flex items-start gap-3">
                                 <i class="fas fa-check-circle text-primary mt-1"></i>
-                                <div>
-                                    <strong class="text-neutral-dark text-sm">Thai Logic Core</strong>
-                                    <p class="text-xs text-gray-500">Handles complex WHT and Thai Labor Law shift rules automatically out of the box.</p>
-                                </div>
+                                <div class="text-sm text-gray-600"><strong>Thai Labor Law:</strong> Shift management and OT calculations pre-configured for local factories.</div>
                             </li>
                         </ul>
                     </div>
@@ -242,124 +214,108 @@
             </div>
         </section>
 
-        <!-- SECTION: IT + OT Deep Dive (Technical Advantage) -->
-        <section class="py-24 bg-white">
+        <!-- SECTION: IT + OT Deep Dive (Interactive Click) -->
+        <section id="it-ot" class="py-24 bg-white">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="mb-16">
+                <div class="mb-12">
                     <span class="text-primary font-bold tracking-wider uppercase text-sm">The Automation Gap</span>
-                    <h2 class="text-3xl font-bold text-neutral-dark mt-2">Closing the "Black Box" Problem</h2>
+                    <h2 class="text-3xl md:text-4xl font-bold text-neutral-dark mt-2">Closing the "Black Box"</h2>
                     <p class="mt-4 text-gray-500 max-w-3xl">
-                        Your client's ERP knows what <em>should</em> happen (Work Orders). The machines know what <em>is</em> happening (Cycles, Scrap). The gap between them is where profit dies. Here is how we bridge it.
+                        Your client's ERP knows what <em>should</em> happen. The machines know what <em>is</em> happening. Click the steps below to see how we bridge the gap.
                     </p>
                 </div>
 
-                <!-- Process Flow Visualization -->
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    
-                    <!-- Step 1: Physical -->
-                    <div class="flow-line">
-                        <div class="bg-neutral-bg p-6 rounded-card border border-gray-200 h-full hover:border-primary transition-colors group">
-                            <div class="w-12 h-12 bg-gray-200 text-gray-500 rounded-full flex items-center justify-center font-bold mb-4 group-hover:bg-primary group-hover:text-white transition-colors">1</div>
-                            <div class="text-4xl text-gray-300 mb-4"><i class="fas fa-industry"></i></div>
-                            <h3 class="text-lg font-bold text-neutral-dark mb-2">Physical Layer</h3>
-                            <p class="text-sm text-gray-500">
-                                Old machines and new machines speak different languages (Analog, Modbus, OPC UA). Usually, this forces manual logs.
-                            </p>
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                    <!-- Left: Interactive Flow List -->
+                    <div class="lg:col-span-4 space-y-4">
+                        <!-- Step 1 -->
+                        <div onclick="setStep(1)" id="step-1" class="process-step active p-6 rounded-card border border-gray-100 cursor-pointer">
+                            <div class="flex items-center gap-4">
+                                <div class="step-icon w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-bold transition-colors">1</div>
+                                <h3 class="font-bold text-neutral-dark">Physical Layer</h3>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-2 pl-14">The Machines (CNC, Injection)</p>
+                        </div>
+                        
+                        <!-- Step 2 -->
+                        <div onclick="setStep(2)" id="step-2" class="process-step p-6 rounded-card border border-gray-100 cursor-pointer">
+                            <div class="flex items-center gap-4">
+                                <div class="step-icon w-10 h-10 rounded-full bg-gray-200 text-gray-500 flex items-center justify-center font-bold transition-colors">2</div>
+                                <h3 class="font-bold text-neutral-dark">Edge Layer</h3>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-2 pl-14">Digiwin AIoT Gateway</p>
+                        </div>
+
+                        <!-- Step 3 -->
+                        <div onclick="setStep(3)" id="step-3" class="process-step p-6 rounded-card border border-gray-100 cursor-pointer">
+                            <div class="flex items-center gap-4">
+                                <div class="step-icon w-10 h-10 rounded-full bg-gray-200 text-gray-500 flex items-center justify-center font-bold transition-colors">3</div>
+                                <h3 class="font-bold text-neutral-dark">Cloud Layer</h3>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-2 pl-14">eMES / T100 ERP</p>
                         </div>
                     </div>
 
-                    <!-- Step 2: Edge -->
-                    <div class="flow-line">
-                        <div class="bg-white p-6 rounded-card border-2 border-primary shadow-lg h-full transform scale-105 z-10">
-                            <div class="w-12 h-12 bg-accent text-white rounded-full flex items-center justify-center font-bold mb-4">2</div>
-                            <div class="text-4xl text-accent mb-4"><i class="fas fa-microchip"></i></div>
-                            <h3 class="text-lg font-bold text-neutral-dark mb-2">Digiwin AIoT Gateway</h3>
-                            <p class="text-sm text-gray-500">
-                                We install a hardware gateway that hooks into the PLC. It translates raw signals into unified JSON data <strong>in real-time</strong>.
-                            </p>
-                            <span class="inline-block mt-4 text-xs font-bold text-accent bg-accent/10 px-2 py-1 rounded">Protocol Translation</span>
+                    <!-- Right: Dynamic Content Area -->
+                    <div class="lg:col-span-8 bg-neutral-bg rounded-2xl p-8 border border-gray-200 relative overflow-hidden min-h-[300px] flex items-center">
+                        <div class="absolute right-0 bottom-0 opacity-5 pointer-events-none">
+                            <i class="fas fa-network-wired text-9xl"></i>
                         </div>
-                    </div>
 
-                    <!-- Step 3: Cloud -->
-                    <div>
-                        <div class="bg-neutral-bg p-6 rounded-card border border-gray-200 h-full hover:border-primary transition-colors group">
-                            <div class="w-12 h-12 bg-gray-200 text-gray-500 rounded-full flex items-center justify-center font-bold mb-4 group-hover:bg-primary group-hover:text-white transition-colors">3</div>
-                            <div class="text-4xl text-gray-300 mb-4"><i class="fas fa-cloud"></i></div>
-                            <h3 class="text-lg font-bold text-neutral-dark mb-2">Application Layer</h3>
-                            <p class="text-sm text-gray-500">
-                                Data flows instantly to the eMES / ERP dashboard. No manual entry. No "Shadow Excel." Just real-time truth.
+                        <!-- Content 1 -->
+                        <div id="content-1" class="fade-in w-full">
+                            <div class="flex items-start gap-4 mb-6">
+                                <span class="bg-gray-800 text-white px-3 py-1 rounded text-xs font-bold tracking-wide">THE REALITY</span>
+                            </div>
+                            <h3 class="text-2xl font-bold text-neutral-dark mb-4">The "Tower of Babel" Problem</h3>
+                            <p class="text-gray-600 mb-6 text-lg leading-relaxed">
+                                Factory floors are messy. A 20-year-old Japanese stamping press speaks "Analog." A new German CNC speaks "OPC UA." Because they don't talk to the ERP, operators have to write logs on paper. This is where data dies.
                             </p>
                         </div>
-                    </div>
 
-                </div>
-            </div>
-        </section>
+                        <!-- Content 2 -->
+                        <div id="content-2" class="hidden fade-in w-full">
+                            <div class="flex items-start gap-4 mb-6">
+                                <span class="bg-accent text-white px-3 py-1 rounded text-xs font-bold tracking-wide">THE HARDWARE</span>
+                            </div>
+                            <h3 class="text-2xl font-bold text-neutral-dark mb-4">Digiwin AIoT Gateway</h3>
+                            <p class="text-gray-600 mb-6 text-lg leading-relaxed">
+                                We install a physical gateway box. It hooks into the machine's PLC or sensors and <strong>translates</strong> raw signals (Voltage, Modbus) into a unified JSON data stream.
+                            </p>
+                            <div class="bg-white p-4 rounded border-l-4 border-accent">
+                                <strong class="text-accent">Edge Logic:</strong> It can calculate "Cycle Time > 50s = Slow" locally before sending data to the cloud.
+                            </div>
+                        </div>
 
-        <!-- SECTION: History & Support (Trust) -->
-        <section class="py-24 bg-neutral-dark text-white border-t border-gray-800">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-                    
-                    <!-- Support Info -->
-                    <div>
-                        <h2 class="text-3xl font-bold mb-6">A Partner Who Is Actually Here</h2>
-                        <p class="text-gray-400 mb-8 text-lg">
-                            We aren't a remote vendor with a "Representative Office." We have a fully staffed Operation Center at Bhiraj Tower, Bangna.
-                        </p>
-                        <ul class="space-y-4">
-                            <li class="flex items-center gap-4">
-                                <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-primary"><i class="fas fa-comments"></i></div>
-                                <div>
-                                    <strong class="block text-white">Thai-Speaking Team</strong>
-                                    <span class="text-sm text-gray-500">50+ Consultants & Support Staff</span>
+                        <!-- Content 3 -->
+                        <div id="content-3" class="hidden fade-in w-full">
+                            <div class="flex items-start gap-4 mb-6">
+                                <span class="bg-primary text-white px-3 py-1 rounded text-xs font-bold tracking-wide">THE TRUTH</span>
+                            </div>
+                            <h3 class="text-2xl font-bold text-neutral-dark mb-4">Real-Time OEE & Visbility</h3>
+                            <p class="text-gray-600 mb-6 text-lg leading-relaxed">
+                                Data flows instantly to the eMES / ERP dashboard. No manual entry. No faking the logs. Management gets the "Real-Time Truth" they need to make decisions.
+                            </p>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="bg-white p-3 rounded shadow-sm text-center">
+                                    <div class="text-primary font-bold text-xl">Auto-Count</div>
+                                    <div class="text-xs text-gray-500">Yield Calculation</div>
                                 </div>
-                            </li>
-                            <li class="flex items-center gap-4">
-                                <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-primary"><i class="fas fa-clock"></i></div>
-                                <div>
-                                    <strong class="block text-white">Local Time Zone SLA</strong>
-                                    <span class="text-sm text-gray-500">No waiting for Europe/US to wake up.</span>
+                                <div class="bg-white p-3 rounded shadow-sm text-center">
+                                    <div class="text-primary font-bold text-xl">Status</div>
+                                    <div class="text-xs text-gray-500">Run / Idle / Stop</div>
                                 </div>
-                            </li>
-                        </ul>
-                    </div>
+                            </div>
+                        </div>
 
-                    <!-- Timeline Stats -->
-                    <div class="grid grid-cols-2 gap-6">
-                        <div class="bg-white/5 border border-white/10 p-6 rounded-card text-center">
-                            <div class="text-3xl font-bold text-white mb-1">1982</div>
-                            <div class="text-xs text-primary font-bold uppercase tracking-wider">Founded</div>
-                        </div>
-                        <div class="bg-white/5 border border-white/10 p-6 rounded-card text-center">
-                            <div class="text-3xl font-bold text-accent mb-1">Foxconn</div>
-                            <div class="text-xs text-gray-400 font-bold uppercase tracking-wider">Strategic Investor</div>
-                        </div>
-                        <div class="bg-white/5 border border-white/10 p-6 rounded-card text-center col-span-2">
-                            <div class="text-3xl font-bold text-primary mb-1">50,000+</div>
-                            <div class="text-xs text-gray-400 font-bold uppercase tracking-wider">Clients in Asia</div>
-                        </div>
                     </div>
-
                 </div>
-            </div>
-        </section>
-
-        <!-- SECTION: Next Step -->
-        <section class="py-16 bg-white border-t border-gray-100">
-            <div class="max-w-4xl mx-auto px-4 text-center">
-                <h2 class="text-2xl font-bold text-neutral-dark mb-4">See the Technology in Detail</h2>
-                <p class="text-gray-500 mb-8">Now that you understand our philosophy, look at the specific tools you can sell.</p>
-                <a href="product_ecosystem.html" class="inline-flex items-center text-primary font-bold hover:underline text-lg">
-                    Explore Product Ecosystem <i class="fas fa-arrow-right ml-2"></i>
-                </a>
             </div>
         </section>
 
     </main>
 
-    <!-- COMPONENT: Footer (Global) -->
+    <!-- COMPONENT: Footer -->
     <footer class="bg-gray-900 text-gray-400 py-16 border-t border-gray-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
@@ -369,53 +325,73 @@
                         <span class="font-bold text-xl text-white">Digiwin<span class="text-primary">Soft</span></span>
                     </div>
                     <p class="text-sm leading-relaxed">
-                        Asia's leading manufacturing ERP & IIoT provider. Empowering Thai industries with smart factory solutions since 1982.
+                        Asia's leading manufacturing ERP & IIoT provider.
                     </p>
                 </div>
-                
-                <div>
-                    <h4 class="text-white font-bold mb-6 uppercase text-sm tracking-wider">Ecosystem</h4>
-                    <ul class="space-y-3 text-sm">
-                        <li><a href="#" class="hover:text-white transition-colors">T100 Enterprise ERP</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">eMES & AIoT</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Workflow AiGP</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Logistics WMS</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h4 class="text-white font-bold mb-6 uppercase text-sm tracking-wider">Partner</h4>
-                    <ul class="space-y-3 text-sm">
-                        <li><a href="#" class="hover:text-white transition-colors">Program Benefits</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Success Stories</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Partner Portal</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Apply Now</a></li>
-                    </ul>
-                </div>
-
                 <div>
                     <h4 class="text-white font-bold mb-6 uppercase text-sm tracking-wider">Bangna HQ</h4>
                     <p class="text-sm leading-relaxed mb-4">
                         26th Floor, Bhiraj Tower at EmQuartier<br>
                         689 Sukhumvit Road, Bangkok 10110
                     </p>
-                    <div class="flex gap-4">
-                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-facebook fa-lg"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-linkedin fa-lg"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-youtube fa-lg"></i></a>
-                    </div>
                 </div>
             </div>
-            
-            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs">
+            <div class="border-t border-gray-800 pt-8 text-xs text-center">
                 <p>&copy; 2025 Digiwin Software (Thailand) Co., Ltd.</p>
-                <div class="flex gap-6 mt-4 md:mt-0">
-                    <a href="#" class="hover:text-white">Privacy Policy</a>
-                    <a href="#" class="hover:text-white">Code of Conduct</a>
-                </div>
             </div>
         </div>
     </footer>
+
+    <!-- INTERACTIVE SCRIPTS -->
+    <script>
+        // Localization Toggle Logic
+        function toggleLoc(mode) {
+            const btnPain = document.getElementById('btn-pain');
+            const btnGain = document.getElementById('btn-gain');
+            const cardPain = document.getElementById('card-pain');
+            const cardGain = document.getElementById('card-gain');
+
+            if (mode === 'pain') {
+                btnPain.classList.add('bg-red-500', 'text-white', 'shadow-md');
+                btnPain.classList.remove('text-gray-500', 'hover:text-primary');
+                btnGain.classList.remove('bg-primary', 'text-white', 'shadow-md');
+                btnGain.classList.add('text-gray-500', 'hover:text-primary');
+                
+                cardPain.classList.remove('hidden');
+                cardGain.classList.add('hidden');
+            } else {
+                btnGain.classList.add('bg-primary', 'text-white', 'shadow-md');
+                btnGain.classList.remove('text-gray-500', 'hover:text-primary');
+                btnPain.classList.remove('bg-red-500', 'text-white', 'shadow-md');
+                btnPain.classList.add('text-gray-500', 'hover:text-primary');
+
+                cardGain.classList.remove('hidden');
+                cardPain.classList.add('hidden');
+            }
+        }
+
+        // IT+OT Step Logic
+        function setStep(stepNum) {
+            // Reset all steps
+            for(let i=1; i<=3; i++) {
+                const step = document.getElementById(`step-${i}`);
+                const icon = step.querySelector('.step-icon');
+                const content = document.getElementById(`content-${i}`);
+
+                if(i === stepNum) {
+                    step.classList.add('active');
+                    icon.classList.remove('bg-gray-200', 'text-gray-500');
+                    icon.classList.add('bg-primary', 'text-white');
+                    content.classList.remove('hidden');
+                } else {
+                    step.classList.remove('active');
+                    icon.classList.add('bg-gray-200', 'text-gray-500');
+                    icon.classList.remove('bg-primary', 'text-white');
+                    content.classList.add('hidden');
+                }
+            }
+        }
+    </script>
 
 </body>
 </html>
