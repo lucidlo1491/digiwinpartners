@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partner Program - The Ecosystem Engine</title>
+    
+    <!-- Design System: External Libraries -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Segoe+UI&display=swap" rel="stylesheet">
+
+    <!-- Design System: Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            DEFAULT: '#00b2e4', // Digiwin Blue
+                            dark: '#0090b8',    // Hover State
+                            light: '#33c2ea',
+                        },
+                        accent: {
+                            DEFAULT: '#ff6b35', // Orange (Foxconn/CTA)
+                            hover: '#e55a2b',
+                        },
+                        neutral: {
+                            text: '#4a4a4a',    // Body Text
+                            bg: '#f5f5f5',      // Light Background
+                            dark: '#1a1a1a',    // Headings
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Segoe UI"', 'Roboto', 'sans-serif'],
+                    },
+                    borderRadius: {
+                        'btn': '8px',
+                        'card': '12px',
+                    },
+                    boxShadow: {
+                        'card': '0 4px 6px rgba(0, 0, 0, 0.05)',
+                        'hover': '0 10px 15px rgba(0, 0, 0, 0.1)',
+                        'glow': '0 0 20px rgba(0, 178, 228, 0.15)'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Global Styles */
+        body { font-family: 'Segoe UI', 'Roboto', sans-serif; color: #4a4a4a; }
+        
+        /* Hero Background */
+        .hero-bg {
+            background: linear-gradient(135deg, #00b2e4 0%, #0090b8 100%);
+        }
+
+        /* Tier Cards */
+        .tier-card {
+            transition: all 0.3s ease;
+        }
+        .tier-card:hover {
+            transform: translateY(-10px);
+        }
+    </style>
+</head>
+<body class="bg-white antialiased">
+
+    <!-- COMPONENT: Header/Navigation (Global) -->
+    <header class="fixed w-full bg-white/95 backdrop-blur-sm shadow-sm z-50 h-20 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex justify-between items-center">
+            <!-- Logo -->
+            <div class="flex items-center gap-2 cursor-pointer" onclick="window.location.href='index.html'">
+                <div class="w-10 h-10 bg-primary rounded-btn flex items-center justify-center text-white font-bold text-xl shadow-sm">D</div>
+                <div class="flex flex-col">
+                    <span class="font-bold text-xl text-neutral-dark leading-none">Digiwin<span class="text-primary">Soft</span></span>
+                    <span class="text-[10px] text-gray-500 tracking-widest uppercase">Thailand Partner</span>
+                </div>
+            </div>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex space-x-8">
+                <a href="why_digiwin.html" class="text-neutral-text hover:text-primary font-medium text-sm transition-colors py-2 border-b-2 border-transparent hover:border-primary">Why Digiwin</a>
+                <a href="product_ecosystem.html" class="text-neutral-text hover:text-primary font-medium text-sm transition-colors py-2 border-b-2 border-transparent hover:border-primary">Product Ecosystem</a>
+                <a href="industry_solutions.html" class="text-neutral-text hover:text-primary font-medium text-sm transition-colors py-2 border-b-2 border-transparent hover:border-primary">Industry Solutions</a>
+                <!-- Active Link -->
+                <a href="partner_program.html" class="text-primary font-bold text-sm transition-colors py-2 border-b-2 border-primary">Partner Program</a>
+            </nav>
+
+            <!-- CTA & Utility -->
+            <div class="flex items-center gap-4">
+                <div class="hidden md:flex text-sm text-gray-400 font-medium">
+                    <span class="hover:text-primary cursor-pointer">TH</span>
+                    <span class="mx-2">|</span>
+                    <span class="text-primary font-bold">EN</span>
+                </div>
+                <a href="contact_partner.html" class="bg-primary hover:bg-primary-dark text-white px-6 py-2.5 rounded-btn text-sm font-bold shadow-lg shadow-primary/30 transition-all transform hover:-translate-y-0.5">
+                    Become a Partner
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="pt-20">
+
+        <!-- SECTION: Hero (Strategic Profit Sharing) -->
+        <section class="hero-bg text-white py-24 relative overflow-hidden">
+            <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#fff 1px, transparent 1px); background-size: 30px 30px;"></div>
+            
+            <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center gap-16">
+                <div class="md:w-3/5">
+                    <div class="inline-flex items-center px-4 py-1.5 rounded-full bg-white/20 border border-white/30 text-white text-xs font-bold tracking-wide uppercase mb-6">
+                        <i class="fas fa-handshake mr-2"></i> The Great Trade
+                    </div>
+                    <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-6">
+                        We Keep the Technology.<br>
+                        <span class="text-gray-100">You Keep the Profit.</span>
+                    </h1>
+                    <p class="text-lg text-blue-50 mb-8 max-w-2xl leading-relaxed">
+                        Unlike traditional principals who compete with you for service fees, we focus 100% on the product. We provide the "Soup" (License), you eat the "Meat" (High-Margin Implementation Services).
+                    </p>
+                    <div class="flex gap-4">
+                        <div class="bg-white/10 border border-white/20 p-4 rounded-lg backdrop-blur-sm">
+                            <div class="text-3xl font-bold text-white">40-50%</div>
+                            <div class="text-xs text-blue-100 uppercase mt-1">License Commission</div>
+                        </div>
+                        <div class="bg-white/10 border border-white/20 p-4 rounded-lg backdrop-blur-sm">
+                            <div class="text-3xl font-bold text-accent">100%</div>
+                            <div class="text-xs text-blue-100 uppercase mt-1">Service Revenue</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-2/5 relative">
+                    <!-- Visual: Pie Chart Representation -->
+                    <div class="bg-white text-neutral-dark p-8 rounded-card shadow-2xl transform rotate-2">
+                        <h3 class="text-lg font-bold mb-4 text-center">Project Revenue Split</h3>
+                        <div class="relative w-48 h-48 mx-auto mb-4 rounded-full border-8 border-neutral-bg flex items-center justify-center bg-accent text-white">
+                            <div class="text-center">
+                                <div class="text-3xl font-bold">80%</div>
+                                <div class="text-xs uppercase">Your Share</div>
+                            </div>
+                            <!-- Small Slice for Digiwin -->
+                            <div class="absolute top-0 right-0 w-1/2 h-1/2 bg-primary rounded-tr-full origin-bottom-left transform rotate-12"></div>
+                        </div>
+                        <div class="flex justify-between text-xs font-bold px-4">
+                            <div class="flex items-center gap-2"><span class="w-3 h-3 bg-accent rounded-full"></span> Implementation</div>
+                            <div class="flex items-center gap-2"><span class="w-3 h-3 bg-primary rounded-full"></span> License Fee</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: New vs Old Model (The Conflict) -->
+        <section class="py-24 bg-neutral-bg">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-bold text-neutral-dark mb-4">Stop Playing a Zero-Sum Game</h2>
+                    <p class="text-gray-500 max-w-2xl mx-auto">
+                        Traditional ERP vendors want to eat your lunch. We built an ecosystem where we only win if you grow.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Old Model -->
+                    <div class="bg-white p-8 rounded-card border-t-4 border-gray-400 shadow-sm opacity-70 hover:opacity-100 transition-opacity">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center text-xl text-gray-500">
+                                <i class="fas fa-history"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-700">The "Old" Principal Model</h3>
+                        </div>
+                        <ul class="space-y-4 text-gray-500 text-sm">
+                            <li class="flex items-start gap-3"><i class="fas fa-minus-circle text-red-400 mt-1"></i> <strong>Conflict:</strong> Their direct sales team steals your best leads.</li>
+                            <li class="flex items-start gap-3"><i class="fas fa-minus-circle text-red-400 mt-1"></i> <strong>Low Margin:</strong> You are just a reseller (10-15% margin).</li>
+                            <li class="flex items-start gap-3"><i class="fas fa-minus-circle text-red-400 mt-1"></i> <strong>Competition:</strong> They keep the high-value consulting for themselves.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Digiwin Model -->
+                    <div class="bg-white p-8 rounded-card border-t-4 border-primary shadow-card transform md:scale-105 z-10">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-xl text-primary">
+                                <i class="fas fa-users-cog"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-neutral-dark">The Ecosystem Engine</h3>
+                        </div>
+                        <ul class="space-y-4 text-gray-600 text-sm">
+                            <li class="flex items-start gap-3"><i class="fas fa-check-circle text-green-500 mt-1"></i> <strong>Protection:</strong> Strict "Deal Registration." We support, never compete.</li>
+                            <li class="flex items-start gap-3"><i class="fas fa-check-circle text-green-500 mt-1"></i> <strong>Lead Gen:</strong> We run Roadshows and give YOU the leads (100%).</li>
+                            <li class="flex items-start gap-3"><i class="fas fa-check-circle text-green-500 mt-1"></i> <strong>High Value:</strong> You own the customization & consulting revenue.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: The Golden Path (Tiers) -->
+        <section class="py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="mb-16 text-center">
+                    <span class="text-primary font-bold tracking-wide uppercase text-sm">Clear Career Path</span>
+                    <h2 class="text-3xl font-bold text-neutral-dark mt-2">The "Golden Path" to Profitability</h2>
+                    <p class="mt-4 text-gray-500">Transparent, quantifiable metrics. No hidden handshakes.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Tier 1: Ready -->
+                    <div class="tier-card bg-neutral-bg p-8 rounded-card border border-gray-200">
+                        <div class="text-gray-400 font-bold text-sm uppercase tracking-widest mb-4">Step 1</div>
+                        <h3 class="text-2xl font-bold text-gray-700 mb-2">Ready Partner</h3>
+                        <p class="text-sm text-gray-500 mb-6 min-h-[40px]">Entry level for small SIs and independent consultants.</p>
+                        <div class="border-t border-gray-200 pt-6 space-y-3">
+                            <div class="flex justify-between text-sm">
+                                <span class="text-gray-500">Commission</span>
+                                <span class="font-bold text-gray-700">30%</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span class="text-gray-500">Training</span>
+                                <span class="font-bold text-gray-700">Online Academy</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span class="text-gray-500">Leads</span>
+                                <span class="font-bold text-gray-700">Self-Gen</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tier 2: Silver -->
+                    <div class="tier-card bg-white p-8 rounded-card border-2 border-gray-300 shadow-lg relative overflow-hidden">
+                        <div class="text-gray-500 font-bold text-sm uppercase tracking-widest mb-4">Step 2</div>
+                        <h3 class="text-2xl font-bold text-neutral-dark mb-2">Silver Partner</h3>
+                        <p class="text-sm text-gray-500 mb-6 min-h-[40px]">Proven delivery capability with certified engineers.</p>
+                        <div class="border-t border-gray-100 pt-6 space-y-3">
+                            <div class="flex justify-between text-sm">
+                                <span class="text-gray-500">Commission</span>
+                                <span class="font-bold text-primary">40%</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span class="text-gray-500">Training</span>
+                                <span class="font-bold text-neutral-dark">On-site Support</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span class="text-gray-500">Leads</span>
+                                <span class="font-bold text-neutral-dark">Shared Pool</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tier 3: Gold -->
+                    <div class="tier-card bg-white p-8 rounded-card border-2 border-accent shadow-2xl relative overflow-hidden transform scale-105 z-10">
+                        <div class="absolute top-0 right-0 bg-accent text-white text-xs font-bold px-3 py-1 rounded-bl-lg">RECOMMENDED</div>
+                        <div class="text-accent font-bold text-sm uppercase tracking-widest mb-4">Step 3</div>
+                        <h3 class="text-2xl font-bold text-neutral-dark mb-2">Gold Partner</h3>
+                        <p class="text-sm text-gray-500 mb-6 min-h-[40px]">Strategic alliance with dedicated territory rights.</p>
+                        <div class="border-t border-gray-100 pt-6 space-y-3">
+                            <div class="flex justify-between text-sm">
+                                <span class="text-gray-500">Commission</span>
+                                <span class="font-bold text-accent text-lg">50%</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span class="text-gray-500">Training</span>
+                                <span class="font-bold text-neutral-dark">Dedicated SA</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span class="text-gray-500">Leads</span>
+                                <span class="font-bold text-accent">Priority Allocation</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: Lead Generation Engine -->
+        <section class="py-24 bg-neutral-dark text-white relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                    <div>
+                        <h2 class="text-3xl font-bold mb-6">We Fuel the Fire.<br>You Close the Deal.</h2>
+                        <p class="text-gray-400 mb-8 leading-relaxed">
+                            We don't expect you to do all the marketing. We invest heavily in <strong>"Brand Roadshows"</strong> across Bangkok, Chonburi, and Rayong.
+                        </p>
+                        <div class="space-y-6">
+                            <div class="flex gap-4">
+                                <div class="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center text-primary font-bold text-xl">1</div>
+                                <div>
+                                    <h4 class="font-bold text-white">Live Demos</h4>
+                                    <p class="text-sm text-gray-400">We host events showing "30-minute system setup" to wow SME owners.</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-4">
+                                <div class="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center text-primary font-bold text-xl">2</div>
+                                <div>
+                                    <h4 class="font-bold text-white">Lead Capture</h4>
+                                    <p class="text-sm text-gray-400">We collect business cards and requirements on-site.</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-4">
+                                <div class="w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center text-accent font-bold text-xl">3</div>
+                                <div>
+                                    <h4 class="font-bold text-white">100% Distribution</h4>
+                                    <p class="text-sm text-gray-400">We hand these leads directly to attending partners to follow up and close.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative">
+                        <div class="bg-gradient-to-br from-gray-800 to-gray-900 border border-gray-700 p-8 rounded-card">
+                            <div class="text-center mb-6">
+                                <i class="fas fa-bullhorn text-5xl text-primary mb-4"></i>
+                                <h3 class="text-xl font-bold">Marketing Support</h3>
+                            </div>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="bg-black/40 p-4 rounded text-center">
+                                    <div class="text-2xl font-bold text-white">3+</div>
+                                    <div class="text-xs text-gray-500">Major Roadshows / Yr</div>
+                                </div>
+                                <div class="bg-black/40 p-4 rounded text-center">
+                                    <div class="text-2xl font-bold text-white">300+</div>
+                                    <div class="text-xs text-gray-500">Inbound Leads / Mo</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: CTA -->
+        <section class="py-20 bg-primary">
+            <div class="max-w-4xl mx-auto px-4 text-center text-white">
+                <h2 class="text-3xl font-bold mb-4">Ready to Join the Ecosystem?</h2>
+                <p class="text-blue-100 mb-8">
+                    We are currently recruiting "Seed Partners" for the Thailand Pilot Program. Secure your territory before the network fills up.
+                </p>
+                <a href="contact_partner.html" class="bg-white text-primary hover:bg-gray-50 px-10 py-4 rounded-btn font-bold text-lg shadow-lg transition-transform transform hover:-translate-y-1 inline-block">
+                    Apply for Pilot Program
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- COMPONENT: Footer (Global) -->
+    <footer class="bg-gray-900 text-gray-400 py-16 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div class="col-span-1 md:col-span-1">
+                    <div class="flex items-center gap-2 mb-6">
+                        <div class="w-8 h-8 bg-primary rounded-btn flex items-center justify-center text-white font-bold">D</div>
+                        <span class="font-bold text-xl text-white">Digiwin<span class="text-primary">Soft</span></span>
+                    </div>
+                    <p class="text-sm leading-relaxed">
+                        Asia's leading manufacturing ERP & IIoT provider. Empowering Thai industries with smart factory solutions since 1982.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-bold mb-6 uppercase text-sm tracking-wider">Ecosystem</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="product_ecosystem.html" class="hover:text-white transition-colors">T100 Enterprise ERP</a></li>
+                        <li><a href="product_ecosystem.html" class="hover:text-white transition-colors">eMES & AIoT</a></li>
+                        <li><a href="product_ecosystem.html" class="hover:text-white transition-colors">Workflow AiGP</a></li>
+                        <li><a href="product_ecosystem.html" class="hover:text-white transition-colors">Logistics WMS</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-6 uppercase text-sm tracking-wider">Partner</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#" class="hover:text-white transition-colors">Program Benefits</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Success Stories</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Partner Portal</a></li>
+                        <li><a href="contact_partner.html" class="hover:text-white transition-colors">Apply Now</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-6 uppercase text-sm tracking-wider">Bangna HQ</h4>
+                    <p class="text-sm leading-relaxed mb-4">
+                        26th Floor, Bhiraj Tower at EmQuartier<br>
+                        689 Sukhumvit Road, Bangkok 10110
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-facebook fa-lg"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-linkedin fa-lg"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-youtube fa-lg"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs">
+                <p>&copy; 2025 Digiwin Software (Thailand) Co., Ltd.</p>
+                <div class="flex gap-6 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-white">Privacy Policy</a>
+                    <a href="#" class="hover:text-white">Code of Conduct</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
+```
+
+### 關鍵更新指示
+
+為了讓網站所有頁面的導航欄 (Header) 都能連到這個新頁面，請您同時更新其他 5 個頁面 (`index.html`, `why_digiwin.html`, `product_ecosystem.html`, `industry_solutions.html`, `contact_partner.html`) 的 `<nav>` 部分，加入指向 `partner_program.html` 的連結：
+
+```html
+<!-- 將原本的 Resources 連結或占位符替換為這個 -->
+<a href="partner_program.html" class="text-neutral-text hover:text-primary font-medium text-sm transition-colors py-2 border-b-2 border-transparent hover:border-primary">Partner Program</a>
