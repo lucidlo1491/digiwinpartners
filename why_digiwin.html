@@ -74,9 +74,10 @@
         .process-step {
             transition: all 0.3s ease;
         }
-        .process-step.active {
+        .process-step:hover {
             border-color: #00b2e4;
             background-color: rgba(0, 178, 228, 0.05);
+            transform: translateX(5px);
         }
     </style>
 </head>
@@ -86,7 +87,7 @@
     <header class="fixed w-full bg-white/95 backdrop-blur-sm shadow-sm z-50 h-20 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex justify-between items-center">
             <!-- Logo -->
-            <div class="flex items-center gap-2 cursor-pointer" onclick="window.location.href='home.html'">
+            <div class="flex items-center gap-2 cursor-pointer" onclick="window.location.href='index.html'">
                 <div class="w-10 h-10 bg-primary rounded-btn flex items-center justify-center text-white font-bold text-xl shadow-sm">D</div>
                 <div class="flex flex-col">
                     <span class="font-bold text-xl text-neutral-dark leading-none">Digiwin<span class="text-primary">Soft</span></span>
@@ -96,9 +97,16 @@
 
             <!-- Desktop Nav -->
             <nav class="hidden md:flex space-x-8">
-                <a href="#" class="text-primary font-bold text-sm transition-colors py-2 border-b-2 border-primary">Why Digiwin</a>
-                <a href="#" class="text-neutral-text hover:text-primary font-medium text-sm transition-colors py-2 border-b-2 border-transparent hover:border-primary">Product Ecosystem</a>
-                <a href="#" class="text-neutral-text hover:text-primary font-medium text-sm transition-colors py-2 border-b-2 border-transparent hover:border-primary">Industry Solutions</a>
+                <!-- LINK 1: Why Digiwin (Active) -->
+                <a href="why_digiwin.html" class="text-primary font-bold text-sm transition-colors py-2 border-b-2 border-primary">Why Digiwin</a>
+                
+                <!-- LINK 2: Product Ecosystem -->
+                <a href="product_ecosystem.html" class="text-neutral-text hover:text-primary font-medium text-sm transition-colors py-2 border-b-2 border-transparent hover:border-primary">Product Ecosystem</a>
+                
+                <!-- LINK 3: Industry Solutions -->
+                <a href="industry_solutions.html" class="text-neutral-text hover:text-primary font-medium text-sm transition-colors py-2 border-b-2 border-transparent hover:border-primary">Industry Solutions</a>
+                
+                <!-- LINK 4: Resources (Placeholder) -->
                 <a href="#" class="text-neutral-text hover:text-primary font-medium text-sm transition-colors py-2 border-b-2 border-transparent hover:border-primary">Resources</a>
             </nav>
 
@@ -109,7 +117,8 @@
                     <span class="mx-2">|</span>
                     <span class="text-primary font-bold">EN</span>
                 </div>
-                <a href="#contact" class="bg-primary hover:bg-primary-dark text-white px-6 py-2.5 rounded-btn text-sm font-bold shadow-lg shadow-primary/30 transition-all transform hover:-translate-y-0.5">
+                <!-- LINK 5: Contact Page -->
+                <a href="contact_partner.html" class="bg-primary hover:bg-primary-dark text-white px-6 py-2.5 rounded-btn text-sm font-bold shadow-lg shadow-primary/30 transition-all transform hover:-translate-y-0.5">
                     Become a Partner
                 </a>
             </div>
@@ -125,7 +134,7 @@
             <div class="absolute inset-0 opacity-10" style="background-image: repeating-linear-gradient(45deg, #00b2e4 0, #00b2e4 1px, transparent 0, transparent 50%); background-size: 20px 20px;"></div>
             
             <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center gap-12">
-                <div class="md:w-3/5">
+                <div class="md:w-3/5 z-10">
                     <div class="inline-flex items-center px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary-light text-xs font-bold tracking-wide uppercase mb-6">
                         <i class="fas fa-industry mr-2"></i> Since 1982
                     </div>
@@ -146,9 +155,12 @@
                     </div>
                 </div>
                 <!-- Visual Placeholder (Engineer in Factory) -->
-                <div class="md:w-2/5 relative">
-                    <div class="bg-white/5 backdrop-blur-md border border-white/10 p-2 rounded-card shadow-2xl transform rotate-2">
-                        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Digiwin Engineer" class="rounded-lg opacity-80">
+                <div class="md:w-2/5 relative z-10">
+                    <div class="bg-white/5 backdrop-blur-md border border-white/10 p-2 rounded-card shadow-2xl transform rotate-2 hover:rotate-0 transition-transform duration-500">
+                        <!-- Simulated Image using CSS Gradient if external image fails -->
+                        <div class="rounded-lg h-64 w-full bg-gradient-to-br from-gray-700 to-gray-900 flex items-center justify-center overflow-hidden relative">
+                             <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Digiwin Engineer" class="object-cover w-full h-full opacity-80 hover:opacity-100 transition-opacity">
+                        </div>
                         <div class="absolute bottom-6 left-6 bg-black/60 backdrop-blur px-4 py-2 rounded-lg border border-white/20">
                             <div class="text-xs text-primary-light font-bold uppercase">On-Site Validation</div>
                             <div class="text-white font-bold">Rayong Plant</div>
@@ -170,52 +182,52 @@
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
                     <!-- Left: The Problem (Generic) -->
-                    <div class="bg-white p-8 rounded-card shadow-card border-l-4 border-red-400">
+                    <div class="bg-white p-8 rounded-card shadow-card border-l-4 border-red-400 group hover:shadow-hover transition-all">
                         <div class="flex items-center gap-4 mb-6">
-                            <div class="w-12 h-12 bg-red-50 text-red-500 rounded-full flex items-center justify-center text-xl">
+                            <div class="w-12 h-12 bg-red-50 text-red-500 rounded-full flex items-center justify-center text-xl group-hover:bg-red-500 group-hover:text-white transition-colors">
                                 <i class="fas fa-times"></i>
                             </div>
                             <h3 class="text-xl font-bold text-neutral-dark">Generic Global ERP</h3>
                         </div>
-                        <ul class="space-y-4">
-                            <li class="flex items-start gap-3">
+                        <ul class="space-y-6">
+                            <li class="flex items-start gap-4">
                                 <i class="fas fa-exclamation-triangle text-red-400 mt-1"></i>
                                 <div>
-                                    <strong class="text-neutral-dark text-sm">Plugin Dependency</strong>
-                                    <p class="text-xs text-gray-500">Requires expensive 3rd-party plugins just to generate e-Tax invoices.</p>
+                                    <strong class="text-neutral-dark text-sm block mb-1">Plugin Dependency</strong>
+                                    <p class="text-sm text-gray-500">Requires expensive 3rd-party plugins just to generate e-Tax invoices. Each plugin adds maintenance risk.</p>
                                 </div>
                             </li>
-                            <li class="flex items-start gap-3">
+                            <li class="flex items-start gap-4">
                                 <i class="fas fa-exclamation-triangle text-red-400 mt-1"></i>
                                 <div>
-                                    <strong class="text-neutral-dark text-sm">WHT Nightmares</strong>
-                                    <p class="text-xs text-gray-500">Struggles with P.N.D. 3/53 multi-tier withholding logic, causing audit risks.</p>
+                                    <strong class="text-neutral-dark text-sm block mb-1">WHT Nightmares</strong>
+                                    <p class="text-sm text-gray-500">Struggles with P.N.D. 3/53 multi-tier withholding logic. Often forces manual work in Excel, causing audit risks.</p>
                                 </div>
                             </li>
                         </ul>
                     </div>
 
                     <!-- Right: The Solution (Digiwin) -->
-                    <div class="bg-white p-8 rounded-card shadow-card border-l-4 border-primary transform md:scale-105 z-10">
+                    <div class="bg-white p-8 rounded-card shadow-card border-l-4 border-primary transform md:scale-105 z-10 group hover:shadow-xl transition-all">
                         <div class="flex items-center gap-4 mb-6">
-                            <div class="w-12 h-12 bg-primary/10 text-primary rounded-full flex items-center justify-center text-xl">
+                            <div class="w-12 h-12 bg-primary/10 text-primary rounded-full flex items-center justify-center text-xl group-hover:bg-primary group-hover:text-white transition-colors">
                                 <i class="fas fa-check"></i>
                             </div>
                             <h3 class="text-xl font-bold text-neutral-dark">Digiwin Thailand</h3>
                         </div>
-                        <ul class="space-y-4">
-                            <li class="flex items-start gap-3">
+                        <ul class="space-y-6">
+                            <li class="flex items-start gap-4">
                                 <i class="fas fa-check-circle text-primary mt-1"></i>
                                 <div>
-                                    <strong class="text-neutral-dark text-sm">Native e-Tax / e-Invoice</strong>
-                                    <p class="text-xs text-gray-500">Built directly into the core kernel. No plugins. No extra fees. Ready for RD audits.</p>
+                                    <strong class="text-neutral-dark text-sm block mb-1">Native e-Tax / e-Invoice</strong>
+                                    <p class="text-sm text-gray-500">Built directly into the core kernel. No plugins. No extra fees. Fully compliant with Thai Revenue Department standards.</p>
                                 </div>
                             </li>
-                            <li class="flex items-start gap-3">
+                            <li class="flex items-start gap-4">
                                 <i class="fas fa-check-circle text-primary mt-1"></i>
                                 <div>
-                                    <strong class="text-neutral-dark text-sm">Thai Logic Core</strong>
-                                    <p class="text-xs text-gray-500">Handles complex WHT and Thai Labor Law shift rules automatically out of the box.</p>
+                                    <strong class="text-neutral-dark text-sm block mb-1">Thai Logic Core</strong>
+                                    <p class="text-sm text-gray-500">Handles complex WHT automatically. Includes Thai Labor Law logic for shift management and OT calculation out of the box.</p>
                                 </div>
                             </li>
                         </ul>
@@ -230,8 +242,8 @@
                 <div class="mb-12">
                     <span class="text-primary font-bold tracking-wider uppercase text-sm">The Automation Gap</span>
                     <h2 class="text-3xl md:text-4xl font-bold text-neutral-dark mt-2">Closing the "Black Box"</h2>
-                    <p class="mt-4 text-gray-500 max-w-3xl">
-                        Your client's ERP knows what <em>should</em> happen. The machines know what <em>is</em> happening. The gap between them is "Shadow Excel". Here is how we bridge it.
+                    <p class="mt-4 text-gray-500 max-w-3xl leading-relaxed">
+                        Your client's ERP knows what <em>should</em> happen (Work Orders). The machines know what <em>is</em> happening (Cycles, Scrap). The gap between them is "Shadow Excel". Here is how we bridge it.
                     </p>
                 </div>
 
@@ -239,51 +251,62 @@
                     <!-- Left: Interactive Flow List -->
                     <div class="lg:col-span-4 space-y-4">
                         <!-- Step 1 -->
-                        <div class="process-step active p-6 rounded-card border border-primary/20 cursor-pointer">
+                        <div class="process-step p-6 rounded-card border border-primary/20 bg-primary/5 cursor-default">
                             <div class="flex items-center gap-4">
                                 <div class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-bold">1</div>
                                 <h3 class="font-bold text-neutral-dark">Physical Layer</h3>
                             </div>
-                            <p class="text-xs text-gray-500 mt-2 pl-14">The Machines (CNC, Injection, Press)</p>
+                            <p class="text-sm text-gray-500 mt-2 pl-14">The Machines (CNC, Injection, Press)</p>
                         </div>
+                        <!-- Arrow Down -->
+                        <div class="flex justify-center text-gray-300"><i class="fas fa-arrow-down"></i></div>
+                        
                         <!-- Step 2 -->
-                        <div class="process-step p-6 rounded-card border border-gray-100 hover:border-primary/50 cursor-pointer">
+                        <div class="process-step p-6 rounded-card border border-gray-100 hover:border-primary/50 cursor-pointer group">
                             <div class="flex items-center gap-4">
-                                <div class="w-10 h-10 rounded-full bg-gray-100 text-gray-500 flex items-center justify-center font-bold">2</div>
+                                <div class="w-10 h-10 rounded-full bg-gray-100 text-gray-500 flex items-center justify-center font-bold group-hover:bg-accent group-hover:text-white transition-colors">2</div>
                                 <h3 class="font-bold text-neutral-dark">Edge Layer</h3>
                             </div>
-                            <p class="text-xs text-gray-500 mt-2 pl-14">Digiwin AIoT Gateway (Protocol Translation)</p>
+                            <p class="text-sm text-gray-500 mt-2 pl-14">Digiwin AIoT Gateway</p>
                         </div>
+                        <!-- Arrow Down -->
+                        <div class="flex justify-center text-gray-300"><i class="fas fa-arrow-down"></i></div>
+
                         <!-- Step 3 -->
-                        <div class="process-step p-6 rounded-card border border-gray-100 hover:border-primary/50 cursor-pointer">
+                        <div class="process-step p-6 rounded-card border border-gray-100 hover:border-primary/50 cursor-pointer group">
                             <div class="flex items-center gap-4">
-                                <div class="w-10 h-10 rounded-full bg-gray-100 text-gray-500 flex items-center justify-center font-bold">3</div>
+                                <div class="w-10 h-10 rounded-full bg-gray-100 text-gray-500 flex items-center justify-center font-bold group-hover:bg-green-500 group-hover:text-white transition-colors">3</div>
                                 <h3 class="font-bold text-neutral-dark">Cloud Layer</h3>
                             </div>
-                            <p class="text-xs text-gray-500 mt-2 pl-14">eMES / T100 ERP (The Truth)</p>
+                            <p class="text-sm text-gray-500 mt-2 pl-14">eMES / T100 ERP (The Truth)</p>
                         </div>
                     </div>
 
                     <!-- Right: Visual Explanation Area -->
-                    <div class="lg:col-span-8 bg-neutral-bg rounded-2xl p-8 border border-gray-200 relative overflow-hidden min-h-[400px] flex items-center">
+                    <div class="lg:col-span-8 bg-neutral-bg rounded-2xl p-8 border border-gray-200 relative overflow-hidden flex flex-col justify-center">
                         <!-- Background Icon -->
                         <div class="absolute right-0 bottom-0 opacity-5 pointer-events-none">
                             <i class="fas fa-network-wired text-9xl"></i>
                         </div>
 
-                        <div>
-                            <div class="flex items-start gap-4 mb-6">
+                        <div class="mb-8">
+                            <div class="flex items-start gap-4 mb-4">
                                 <span class="bg-gray-800 text-white px-3 py-1 rounded text-xs font-bold tracking-wide">THE REALITY</span>
                             </div>
                             <h3 class="text-2xl font-bold text-neutral-dark mb-4">The "Tower of Babel" Problem</h3>
-                            <p class="text-gray-600 mb-6 text-lg leading-relaxed">
+                            <p class="text-gray-600 text-lg leading-relaxed">
                                 Factory floors are messy. You have a 20-year-old Japanese stamping press next to a brand new German CNC. They speak different languages (Analog, Modbus, OPC UA). Usually, this forces manual data entry—where accuracy dies.
                             </p>
-                            <div class="bg-white p-6 rounded-card shadow-sm border-l-4 border-primary">
-                                <h4 class="font-bold text-primary mb-2 text-sm">The Digiwin Fix:</h4>
-                                <p class="text-sm text-gray-600">
-                                    Our hardware gateway translates all these signals into a unified JSON stream before it ever hits the ERP.
-                                </p>
+                        </div>
+                        
+                        <div class="bg-white p-8 rounded-card shadow-sm border-l-4 border-primary">
+                            <h4 class="font-bold text-primary mb-3 text-lg">The Digiwin Fix:</h4>
+                            <p class="text-gray-600 mb-4">
+                                We install the <strong>AIoT Gateway</strong> hardware. It hooks physically into the machine (via PLC or sensors), translates raw signals into unified JSON data, and streams it to the ERP in real-time.
+                            </p>
+                            <div class="flex gap-4 text-sm font-semibold text-neutral-dark">
+                                <div class="flex items-center gap-2"><i class="fas fa-bolt text-accent"></i> Real-time OEE</div>
+                                <div class="flex items-center gap-2"><i class="fas fa-ban text-red-500"></i> No Manual Logs</div>
                             </div>
                         </div>
                     </div>
@@ -358,10 +381,10 @@
                 <div>
                     <h4 class="text-white font-bold mb-6 uppercase text-sm tracking-wider">Ecosystem</h4>
                     <ul class="space-y-3 text-sm">
-                        <li><a href="#" class="hover:text-white transition-colors">T100 Enterprise ERP</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">eMES & AIoT</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Workflow AiGP</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Logistics WMS</a></li>
+                        <li><a href="product_ecosystem.html" class="hover:text-white transition-colors">T100 Enterprise ERP</a></li>
+                        <li><a href="product_ecosystem.html" class="hover:text-white transition-colors">eMES & AIoT</a></li>
+                        <li><a href="product_ecosystem.html" class="hover:text-white transition-colors">Workflow AiGP</a></li>
+                        <li><a href="product_ecosystem.html" class="hover:text-white transition-colors">Logistics WMS</a></li>
                     </ul>
                 </div>
 
@@ -371,7 +394,7 @@
                         <li><a href="#" class="hover:text-white transition-colors">Program Benefits</a></li>
                         <li><a href="#" class="hover:text-white transition-colors">Success Stories</a></li>
                         <li><a href="#" class="hover:text-white transition-colors">Partner Portal</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Apply Now</a></li>
+                        <li><a href="contact_partner.html" class="hover:text-white transition-colors">Apply Now</a></li>
                     </ul>
                 </div>
 
