@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digiwin Industry Solutions - Vertical Expertise</title>
+    
+    <!-- Design System: External Libraries -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Segoe+UI&display=swap" rel="stylesheet">
+
+    <!-- Design System: Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            DEFAULT: '#00b2e4', // Digiwin Blue
+                            dark: '#0090b8',    // Hover State
+                            light: '#33c2ea',
+                        },
+                        accent: {
+                            DEFAULT: '#ff6b35', // Orange (Foxconn/CTA)
+                            hover: '#e55a2b',
+                        },
+                        neutral: {
+                            text: '#4a4a4a',    // Body Text
+                            bg: '#f5f5f5',      // Light Background
+                            dark: '#1a1a1a',    // Headings
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Segoe UI"', 'Roboto', 'sans-serif'],
+                    },
+                    borderRadius: {
+                        'btn': '8px',
+                        'card': '12px',
+                    },
+                    boxShadow: {
+                        'card': '0 4px 6px rgba(0, 0, 0, 0.05)',
+                        'hover': '0 10px 15px rgba(0, 0, 0, 0.1)',
+                        'glow': '0 0 15px rgba(0, 178, 228, 0.2)'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Global Styles */
+        body { font-family: 'Segoe UI', 'Roboto', sans-serif; color: #4a4a4a; }
+        
+        /* Hero Background */
+        .hero-bg {
+            background: linear-gradient(135deg, #111827 0%, #1f2937 100%);
+        }
+
+        /* Industry Card Hover Effect */
+        .industry-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .industry-card:hover {
+            transform: translateY(-8px);
+        }
+        .industry-card:hover .icon-container {
+            background-color: #00b2e4;
+            color: white;
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body class="bg-white antialiased">
+
+    <!-- COMPONENT: Header/Navigation (Global) -->
+    <header class="fixed w-full bg-white/95 backdrop-blur-sm shadow-sm z-50 h-20 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex justify-between items-center">
+            <!-- Logo -->
+            <div class="flex items-center gap-2 cursor-pointer" onclick="window.location.href='home.html'">
+                <div class="w-10 h-10 bg-primary rounded-btn flex items-center justify-center text-white font-bold text-xl shadow-sm">D</div>
+                <div class="flex flex-col">
+                    <span class="font-bold text-xl text-neutral-dark leading-none">Digiwin<span class="text-primary">Soft</span></span>
+                    <span class="text-[10px] text-gray-500 tracking-widest uppercase">Thailand Partner</span>
+                </div>
+            </div>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex space-x-8">
+                <a href="#" class="text-neutral-text hover:text-primary font-medium text-sm transition-colors py-2 border-b-2 border-transparent hover:border-primary">Why Digiwin</a>
+                <a href="#" class="text-neutral-text hover:text-primary font-medium text-sm transition-colors py-2 border-b-2 border-transparent hover:border-primary">Product Ecosystem</a>
+                <a href="#" class="text-primary font-bold text-sm transition-colors py-2 border-b-2 border-primary">Industry Solutions</a>
+                <a href="#" class="text-neutral-text hover:text-primary font-medium text-sm transition-colors py-2 border-b-2 border-transparent hover:border-primary">Resources</a>
+            </nav>
+
+            <!-- CTA & Utility -->
+            <div class="flex items-center gap-4">
+                <div class="hidden md:flex text-sm text-gray-400 font-medium">
+                    <span class="hover:text-primary cursor-pointer">TH</span>
+                    <span class="mx-2">|</span>
+                    <span class="text-primary font-bold">EN</span>
+                </div>
+                <a href="#contact" class="bg-primary hover:bg-primary-dark text-white px-6 py-2.5 rounded-btn text-sm font-bold shadow-lg shadow-primary/30 transition-all transform hover:-translate-y-0.5">
+                    Become a Partner
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="pt-20">
+
+        <!-- SECTION: Hero (Vertical Expertise) -->
+        <section class="relative hero-bg text-white py-24 overflow-hidden">
+            <!-- Abstract Industrial Lines -->
+            <div class="absolute inset-0 opacity-10" style="background-image: repeating-linear-gradient(45deg, #00b2e4 0, #00b2e4 1px, transparent 0, transparent 50%); background-size: 30px 30px;"></div>
+            
+            <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center">
+                <div class="inline-flex items-center px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary-light text-xs font-bold tracking-wide uppercase mb-8">
+                    <i class="fas fa-layer-group mr-2"></i> Vertical Specialization
+                </div>
+                <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-6">
+                    Don't Sell Generic Software <br>
+                    to <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary-light to-white">Specific Industries</span>.
+                </h1>
+                <p class="text-lg text-gray-300 mb-10 max-w-3xl leading-relaxed">
+                    Generalist ERPs fail on the factory floor because they lack the specific logic for Mold Management, Yield Calculation, or MMOG/LE. Digiwin comes with 44 years of industry best practices <strong>pre-built</strong>.
+                </p>
+                
+                <!-- Quick Industry Selector -->
+                <div class="flex flex-wrap justify-center gap-4">
+                    <button onclick="scrollToSection('auto')" class="bg-white/10 hover:bg-white/20 border border-white/10 text-white px-6 py-3 rounded-btn backdrop-blur-sm transition-all flex items-center gap-2">
+                        <i class="fas fa-car text-primary"></i> Automotive
+                    </button>
+                    <button onclick="scrollToSection('elec')" class="bg-white/10 hover:bg-white/20 border border-white/10 text-white px-6 py-3 rounded-btn backdrop-blur-sm transition-all flex items-center gap-2">
+                        <i class="fas fa-microchip text-accent"></i> Electronics
+                    </button>
+                    <button onclick="scrollToSection('metal')" class="bg-white/10 hover:bg-white/20 border border-white/10 text-white px-6 py-3 rounded-btn backdrop-blur-sm transition-all flex items-center gap-2">
+                        <i class="fas fa-cogs text-gray-300"></i> Metal & Plastics
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: The "Customization Trap" (Margin Protection) -->
+        <section class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="bg-neutral-bg rounded-2xl p-8 md:p-12 border border-gray-200">
+                    <div class="flex flex-col md:flex-row gap-12 items-center">
+                        <div class="md:w-1/2">
+                            <h2 class="text-3xl font-bold text-neutral-dark mb-4">Stop The "Customization Tax"</h2>
+                            <p class="text-gray-600 mb-6 leading-relaxed">
+                                When you sell a generic ERP (like Odoo or SAP B1) to a factory, you spend the first 6 months coding basic logic like "Mold Lifespan" or "Lot Traceability." This eats your margin and delays go-live.
+                            </p>
+                            <div class="flex items-center gap-4 text-sm font-semibold text-neutral-dark">
+                                <div class="flex items-center gap-2">
+                                    <div class="w-2 h-2 rounded-full bg-red-500"></div> Generic ERP: 12 Months
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <div class="w-2 h-2 rounded-full bg-primary"></div> Digiwin: 4 Months
+                                </div>
+                            </div>
+                        </div>
+                        <div class="md:w-1/2 w-full">
+                            <!-- Comparison Bar Chart (CSS only) -->
+                            <div class="space-y-4">
+                                <div>
+                                    <div class="flex justify-between text-xs font-bold text-gray-500 mb-1">
+                                        <span>Generic ERP Implementation</span>
+                                        <span class="text-red-500">High Risk</span>
+                                    </div>
+                                    <div class="h-8 bg-gray-200 rounded-full overflow-hidden relative">
+                                        <div class="h-full bg-gray-400 w-3/4 flex items-center justify-end pr-3 text-white text-xs font-bold">Coding Custom Logic</div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="flex justify-between text-xs font-bold text-gray-500 mb-1">
+                                        <span>Digiwin Implementation</span>
+                                        <span class="text-primary">High Margin</span>
+                                    </div>
+                                    <div class="h-8 bg-primary/10 rounded-full overflow-hidden relative border border-primary/20">
+                                        <div class="h-full bg-primary w-1/4 flex items-center justify-end pr-3 text-white text-xs font-bold">Config</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: Automotive Industry -->
+        <section id="auto" class="py-24 bg-white border-t border-gray-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col md:flex-row gap-16 items-center">
+                    <div class="md:w-1/2 order-2 md:order-1">
+                        <div class="relative rounded-card overflow-hidden shadow-2xl group">
+                            <img src="https://images.unsplash.com/photo-1565043666747-69f6646db940?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Automotive Factory" class="w-full transition-transform duration-700 group-hover:scale-105">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-8">
+                                <div class="text-white">
+                                    <div class="text-accent font-bold text-sm uppercase tracking-wider mb-1">Tier 1 & 2 Suppliers</div>
+                                    <div class="text-2xl font-bold">Automotive Parts</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 order-1 md:order-2">
+                        <div class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center text-primary text-2xl mb-6">
+                            <i class="fas fa-car-side"></i>
+                        </div>
+                        <h2 class="text-3xl font-bold text-neutral-dark mb-4">Automotive Supply Chain</h2>
+                        <p class="text-gray-500 mb-8 leading-relaxed">
+                            The stakes are high. A line-down situation costs millions. Digiwin provides the rigorous traceability and EDI standards required by Toyota, Honda, and Tesla supply chains.
+                        </p>
+                        
+                        <div class="space-y-6">
+                            <!-- Feature 1 -->
+                            <div class="flex gap-4">
+                                <div class="flex-shrink-0 w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold text-sm">1</div>
+                                <div>
+                                    <h4 class="font-bold text-neutral-dark">MMOG/LE Compliance</h4>
+                                    <p class="text-sm text-gray-500">Standardized logistics evaluation logic built-in, helping suppliers pass OEM audits.</p>
+                                </div>
+                            </div>
+                            <!-- Feature 2 -->
+                            <div class="flex gap-4">
+                                <div class="flex-shrink-0 w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold text-sm">2</div>
+                                <div>
+                                    <h4 class="font-bold text-neutral-dark">Electronic Data Interchange (EDI)</h4>
+                                    <p class="text-sm text-gray-500">Native integration for DELFOR/DELJIT messages. Automate orders from OEMs.</p>
+                                </div>
+                            </div>
+                            <!-- Feature 3 -->
+                            <div class="flex gap-4">
+                                <div class="flex-shrink-0 w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold text-sm">3</div>
+                                <div>
+                                    <h4 class="font-bold text-neutral-dark">Safety Stock & JIT</h4>
+                                    <p class="text-sm text-gray-500">Advanced MRP logic to handle Just-In-Time delivery schedules without overstocking.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: Electronics Industry -->
+        <section id="elec" class="py-24 bg-neutral-bg">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col md:flex-row gap-16 items-center">
+                    <div class="md:w-1/2">
+                        <div class="w-14 h-14 bg-orange-100 rounded-xl flex items-center justify-center text-accent text-2xl mb-6">
+                            <i class="fas fa-microchip"></i>
+                        </div>
+                        <h2 class="text-3xl font-bold text-neutral-dark mb-4">Electronics & PCB Assembly</h2>
+                        <p class="text-gray-500 mb-8 leading-relaxed">
+                            High speed, high volume, and tiny margins. Digiwin helps you manage component sourcing (AVL) and yield rates with precision.
+                        </p>
+                        
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <!-- Feature Card -->
+                            <div class="bg-white p-5 rounded-lg border border-gray-200 shadow-sm">
+                                <h4 class="font-bold text-neutral-dark mb-2 text-sm"><i class="fas fa-water text-primary mr-2"></i>MSL Management</h4>
+                                <p class="text-xs text-gray-500">Track Moisture Sensitivity Levels. Prevent "Popcorn Effect" defects in soldering.</p>
+                            </div>
+                            <!-- Feature Card -->
+                            <div class="bg-white p-5 rounded-lg border border-gray-200 shadow-sm">
+                                <h4 class="font-bold text-neutral-dark mb-2 text-sm"><i class="fas fa-percentage text-primary mr-2"></i>Yield Rate Calculation</h4>
+                                <p class="text-xs text-gray-500">Real-time yield tracking at every station. Catch drift before it ruins the batch.</p>
+                            </div>
+                            <!-- Feature Card -->
+                            <div class="bg-white p-5 rounded-lg border border-gray-200 shadow-sm">
+                                <h4 class="font-bold text-neutral-dark mb-2 text-sm"><i class="fas fa-list-check text-primary mr-2"></i>Approved Vendor List</h4>
+                                <p class="text-xs text-gray-500">Strict AVL controls. Ensure operators never use unauthorized substitute parts.</p>
+                            </div>
+                            <!-- Feature Card -->
+                            <div class="bg-white p-5 rounded-lg border border-gray-200 shadow-sm">
+                                <h4 class="font-bold text-neutral-dark mb-2 text-sm"><i class="fas fa-barcode text-primary mr-2"></i>SMT Feeder Integration</h4>
+                                <p class="text-xs text-gray-500">Prevent wrong reel loading. Validate component vs. slot before the machine starts.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2">
+                        <div class="relative rounded-card overflow-hidden shadow-2xl group">
+                            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Electronics Factory" class="w-full transition-transform duration-700 group-hover:scale-105">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-8">
+                                <div class="text-white">
+                                    <div class="text-accent font-bold text-sm uppercase tracking-wider mb-1">SMT & PCBA</div>
+                                    <div class="text-2xl font-bold">Electronics Mfg</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: Metal & Plastic -->
+        <section id="metal" class="py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <div class="w-14 h-14 bg-gray-100 rounded-xl flex items-center justify-center text-gray-600 text-2xl mb-6 mx-auto">
+                        <i class="fas fa-cubes"></i>
+                    </div>
+                    <h2 class="text-3xl font-bold text-neutral-dark mb-4">Metal & Plastic Injection</h2>
+                    <p class="text-gray-500">
+                        Manage the lifecycle of your most expensive assets—Molds and Dies.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Feature 1 -->
+                    <div class="industry-card bg-neutral-bg p-8 rounded-card border border-gray-100">
+                        <div class="icon-container w-12 h-12 bg-white rounded-full flex items-center justify-center text-primary text-xl mb-6 shadow-sm transition-transform duration-300">
+                            <i class="fas fa-shapes"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-neutral-dark mb-3">Mold Management</h3>
+                        <p class="text-sm text-gray-500">Track shot counts (lifespan). Auto-schedule maintenance before the mold degrades quality.</p>
+                    </div>
+                    <!-- Feature 2 -->
+                    <div class="industry-card bg-neutral-bg p-8 rounded-card border border-gray-100">
+                        <div class="icon-container w-12 h-12 bg-white rounded-full flex items-center justify-center text-primary text-xl mb-6 shadow-sm transition-transform duration-300">
+                            <i class="fas fa-recycle"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-neutral-dark mb-3">Scrap & Regrind</h3>
+                        <p class="text-sm text-gray-500">Handle "Runner" recycling. Manage inventory of Regrind material mixed with Virgin material.</p>
+                    </div>
+                    <!-- Feature 3 -->
+                    <div class="industry-card bg-neutral-bg p-8 rounded-card border border-gray-100">
+                        <div class="icon-container w-12 h-12 bg-white rounded-full flex items-center justify-center text-primary text-xl mb-6 shadow-sm transition-transform duration-300">
+                            <i class="fas fa-weight-hanging"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-neutral-dark mb-3">Multi-Unit Mgmt</h3>
+                        <p class="text-sm text-gray-500">Handle dual units easily (e.g., Inventory in "Pieces", Purchasing in "Kilograms").</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: CTA (Template Library) -->
+        <section class="py-24 bg-neutral-dark relative overflow-hidden text-white">
+            <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80')] bg-cover bg-center opacity-20 mix-blend-overlay"></div>
+            
+            <div class="relative max-w-4xl mx-auto px-4 text-center">
+                <span class="text-accent font-bold tracking-wide uppercase text-sm mb-4 block">Partner Exclusive Benefit</span>
+                <h2 class="text-3xl md:text-5xl font-bold mb-8">Access the Industry Template Library</h2>
+                <p class="text-xl text-gray-300 mb-10 leading-relaxed">
+                    Don't reinvent the wheel. Partners get access to pre-configured T100 & eMES templates for Auto, Elec, and Metal industries. Reduce deployment time by 40%.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <button class="bg-primary hover:bg-primary-dark text-white px-10 py-4 rounded-btn font-bold text-lg shadow-lg shadow-primary/30 transition-all transform hover:-translate-y-1">
+                        Download Template Spec Sheets
+                    </button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- COMPONENT: Footer (Global) -->
+    <footer class="bg-gray-900 text-gray-400 py-16 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div class="col-span-1 md:col-span-1">
+                    <div class="flex items-center gap-2 mb-6">
+                        <div class="w-8 h-8 bg-primary rounded-btn flex items-center justify-center text-white font-bold">D</div>
+                        <span class="font-bold text-xl text-white">Digiwin<span class="text-primary">Soft</span></span>
+                    </div>
+                    <p class="text-sm leading-relaxed">
+                        Asia's leading manufacturing ERP & IIoT provider. Empowering Thai industries with smart factory solutions since 1982.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-bold mb-6 uppercase text-sm tracking-wider">Ecosystem</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#" class="hover:text-white transition-colors">T100 Enterprise ERP</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">eMES & AIoT</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Workflow AiGP</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Logistics WMS</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-6 uppercase text-sm tracking-wider">Partner</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#" class="hover:text-white transition-colors">Program Benefits</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Success Stories</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Partner Portal</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Apply Now</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-6 uppercase text-sm tracking-wider">Bangna HQ</h4>
+                    <p class="text-sm leading-relaxed mb-4">
+                        26th Floor, Bhiraj Tower at EmQuartier<br>
+                        689 Sukhumvit Road, Bangkok 10110
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-facebook fa-lg"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-linkedin fa-lg"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-youtube fa-lg"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs">
+                <p>&copy; 2025 Digiwin Software (Thailand) Co., Ltd.</p>
+                <div class="flex gap-6 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-white">Privacy Policy</a>
+                    <a href="#" class="hover:text-white">Code of Conduct</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function scrollToSection(id) {
+            const element = document.getElementById(id);
+            if(element) {
+                element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+    </script>
+</body>
+</html>

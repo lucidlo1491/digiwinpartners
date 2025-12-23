@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why Digiwin - Strategic Partner Profile</title>
+    
+    <!-- Design System: External Libraries -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Segoe+UI&display=swap" rel="stylesheet">
+
+    <!-- Design System: Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            DEFAULT: '#00b2e4', // Digiwin Blue
+                            dark: '#0090b8',    // Hover State
+                            light: '#33c2ea',
+                        },
+                        accent: {
+                            DEFAULT: '#ff6b35', // Orange (Foxconn/CTA)
+                            hover: '#e55a2b',
+                        },
+                        neutral: {
+                            text: '#4a4a4a',    // Body Text
+                            bg: '#f5f5f5',      // Light Background
+                            dark: '#1a1a1a',    // Headings
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Segoe UI"', 'Roboto', 'sans-serif'],
+                    },
+                    borderRadius: {
+                        'btn': '8px',
+                        'card': '12px',
+                    },
+                    boxShadow: {
+                        'card': '0 4px 6px rgba(0, 0, 0, 0.05)',
+                        'hover': '0 10px 15px rgba(0, 0, 0, 0.1)',
+                        'glow': '0 0 20px rgba(0, 178, 228, 0.15)'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Global Styles */
+        body { font-family: 'Segoe UI', 'Roboto', sans-serif; color: #4a4a4a; }
+        
+        /* Hero Background */
+        .hero-bg {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+        }
+
+        /* Timeline Connector */
+        .timeline-line::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: #e5e7eb;
+            z-index: 0;
+            transform: translateY(-50%);
+        }
+
+        /* Interactive Process Step */
+        .process-step {
+            transition: all 0.3s ease;
+        }
+        .process-step.active {
+            border-color: #00b2e4;
+            background-color: rgba(0, 178, 228, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-white antialiased">
+
+    <!-- COMPONENT: Header/Navigation (Global) -->
+    <header class="fixed w-full bg-white/95 backdrop-blur-sm shadow-sm z-50 h-20 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex justify-between items-center">
+            <!-- Logo -->
+            <div class="flex items-center gap-2 cursor-pointer" onclick="window.location.href='home.html'">
+                <div class="w-10 h-10 bg-primary rounded-btn flex items-center justify-center text-white font-bold text-xl shadow-sm">D</div>
+                <div class="flex flex-col">
+                    <span class="font-bold text-xl text-neutral-dark leading-none">Digiwin<span class="text-primary">Soft</span></span>
+                    <span class="text-[10px] text-gray-500 tracking-widest uppercase">Thailand Partner</span>
+                </div>
+            </div>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex space-x-8">
+                <a href="#" class="text-primary font-bold text-sm transition-colors py-2 border-b-2 border-primary">Why Digiwin</a>
+                <a href="#" class="text-neutral-text hover:text-primary font-medium text-sm transition-colors py-2 border-b-2 border-transparent hover:border-primary">Product Ecosystem</a>
+                <a href="#" class="text-neutral-text hover:text-primary font-medium text-sm transition-colors py-2 border-b-2 border-transparent hover:border-primary">Industry Solutions</a>
+                <a href="#" class="text-neutral-text hover:text-primary font-medium text-sm transition-colors py-2 border-b-2 border-transparent hover:border-primary">Resources</a>
+            </nav>
+
+            <!-- CTA & Utility -->
+            <div class="flex items-center gap-4">
+                <div class="hidden md:flex text-sm text-gray-400 font-medium">
+                    <span class="hover:text-primary cursor-pointer">TH</span>
+                    <span class="mx-2">|</span>
+                    <span class="text-primary font-bold">EN</span>
+                </div>
+                <a href="#contact" class="bg-primary hover:bg-primary-dark text-white px-6 py-2.5 rounded-btn text-sm font-bold shadow-lg shadow-primary/30 transition-all transform hover:-translate-y-0.5">
+                    Become a Partner
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="pt-20">
+
+        <!-- SECTION: Hero (Manufacturing DNA) -->
+        <section class="hero-bg text-white py-24 relative overflow-hidden">
+            <!-- Factory Pattern Overlay -->
+            <div class="absolute inset-0 opacity-10" style="background-image: repeating-linear-gradient(45deg, #00b2e4 0, #00b2e4 1px, transparent 0, transparent 50%); background-size: 20px 20px;"></div>
+            
+            <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-3/5">
+                    <div class="inline-flex items-center px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary-light text-xs font-bold tracking-wide uppercase mb-6">
+                        <i class="fas fa-industry mr-2"></i> Since 1982
+                    </div>
+                    <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-6">
+                        Built for the <span class="text-primary">Thai Factory Floor</span>, <br>
+                        Backed by <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary-light to-white">44 Years of DNA</span>.
+                    </h1>
+                    <p class="text-lg text-gray-300 mb-8 max-w-2xl leading-relaxed">
+                        Generalist ERPs stop at the office door. We are manufacturing specialists who have closed the "Automation Gap" for 50,000+ factories across Asia.
+                    </p>
+                    <div class="flex gap-6 text-sm font-medium text-gray-400">
+                        <div class="flex items-center gap-2">
+                            <i class="fas fa-check-circle text-primary"></i> Native Thai Compliance
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fas fa-check-circle text-primary"></i> Deep OT Integration
+                        </div>
+                    </div>
+                </div>
+                <!-- Visual Placeholder (Engineer in Factory) -->
+                <div class="md:w-2/5 relative">
+                    <div class="bg-white/5 backdrop-blur-md border border-white/10 p-2 rounded-card shadow-2xl transform rotate-2">
+                        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Digiwin Engineer" class="rounded-lg opacity-80">
+                        <div class="absolute bottom-6 left-6 bg-black/60 backdrop-blur px-4 py-2 rounded-lg border border-white/20">
+                            <div class="text-xs text-primary-light font-bold uppercase">On-Site Validation</div>
+                            <div class="text-white font-bold">Rayong Plant</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: The "Localization" Moat (Compliance) -->
+        <section id="localization" class="py-24 bg-neutral-bg">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-bold text-neutral-dark mb-4">The "Localization" Myth</h2>
+                    <p class="text-gray-500 max-w-2xl mx-auto">
+                        Why Generic Global ERPs fail in Thailand vs. How Digiwin solves it natively.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+                    <!-- Left: The Problem (Generic) -->
+                    <div class="bg-white p-8 rounded-card shadow-card border-l-4 border-red-400">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-12 h-12 bg-red-50 text-red-500 rounded-full flex items-center justify-center text-xl">
+                                <i class="fas fa-times"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-neutral-dark">Generic Global ERP</h3>
+                        </div>
+                        <ul class="space-y-4">
+                            <li class="flex items-start gap-3">
+                                <i class="fas fa-exclamation-triangle text-red-400 mt-1"></i>
+                                <div>
+                                    <strong class="text-neutral-dark text-sm">Plugin Dependency</strong>
+                                    <p class="text-xs text-gray-500">Requires expensive 3rd-party plugins just to generate e-Tax invoices.</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fas fa-exclamation-triangle text-red-400 mt-1"></i>
+                                <div>
+                                    <strong class="text-neutral-dark text-sm">WHT Nightmares</strong>
+                                    <p class="text-xs text-gray-500">Struggles with P.N.D. 3/53 multi-tier withholding logic, causing audit risks.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Right: The Solution (Digiwin) -->
+                    <div class="bg-white p-8 rounded-card shadow-card border-l-4 border-primary transform md:scale-105 z-10">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-12 h-12 bg-primary/10 text-primary rounded-full flex items-center justify-center text-xl">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-neutral-dark">Digiwin Thailand</h3>
+                        </div>
+                        <ul class="space-y-4">
+                            <li class="flex items-start gap-3">
+                                <i class="fas fa-check-circle text-primary mt-1"></i>
+                                <div>
+                                    <strong class="text-neutral-dark text-sm">Native e-Tax / e-Invoice</strong>
+                                    <p class="text-xs text-gray-500">Built directly into the core kernel. No plugins. No extra fees. Ready for RD audits.</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fas fa-check-circle text-primary mt-1"></i>
+                                <div>
+                                    <strong class="text-neutral-dark text-sm">Thai Logic Core</strong>
+                                    <p class="text-xs text-gray-500">Handles complex WHT and Thai Labor Law shift rules automatically out of the box.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: IT + OT Deep Dive (Technical Advantage) -->
+        <section id="it-ot" class="py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="mb-12">
+                    <span class="text-primary font-bold tracking-wider uppercase text-sm">The Automation Gap</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-neutral-dark mt-2">Closing the "Black Box"</h2>
+                    <p class="mt-4 text-gray-500 max-w-3xl">
+                        Your client's ERP knows what <em>should</em> happen. The machines know what <em>is</em> happening. The gap between them is "Shadow Excel". Here is how we bridge it.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                    <!-- Left: Interactive Flow List -->
+                    <div class="lg:col-span-4 space-y-4">
+                        <!-- Step 1 -->
+                        <div class="process-step active p-6 rounded-card border border-primary/20 cursor-pointer">
+                            <div class="flex items-center gap-4">
+                                <div class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-bold">1</div>
+                                <h3 class="font-bold text-neutral-dark">Physical Layer</h3>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-2 pl-14">The Machines (CNC, Injection, Press)</p>
+                        </div>
+                        <!-- Step 2 -->
+                        <div class="process-step p-6 rounded-card border border-gray-100 hover:border-primary/50 cursor-pointer">
+                            <div class="flex items-center gap-4">
+                                <div class="w-10 h-10 rounded-full bg-gray-100 text-gray-500 flex items-center justify-center font-bold">2</div>
+                                <h3 class="font-bold text-neutral-dark">Edge Layer</h3>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-2 pl-14">Digiwin AIoT Gateway (Protocol Translation)</p>
+                        </div>
+                        <!-- Step 3 -->
+                        <div class="process-step p-6 rounded-card border border-gray-100 hover:border-primary/50 cursor-pointer">
+                            <div class="flex items-center gap-4">
+                                <div class="w-10 h-10 rounded-full bg-gray-100 text-gray-500 flex items-center justify-center font-bold">3</div>
+                                <h3 class="font-bold text-neutral-dark">Cloud Layer</h3>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-2 pl-14">eMES / T100 ERP (The Truth)</p>
+                        </div>
+                    </div>
+
+                    <!-- Right: Visual Explanation Area -->
+                    <div class="lg:col-span-8 bg-neutral-bg rounded-2xl p-8 border border-gray-200 relative overflow-hidden min-h-[400px] flex items-center">
+                        <!-- Background Icon -->
+                        <div class="absolute right-0 bottom-0 opacity-5 pointer-events-none">
+                            <i class="fas fa-network-wired text-9xl"></i>
+                        </div>
+
+                        <div>
+                            <div class="flex items-start gap-4 mb-6">
+                                <span class="bg-gray-800 text-white px-3 py-1 rounded text-xs font-bold tracking-wide">THE REALITY</span>
+                            </div>
+                            <h3 class="text-2xl font-bold text-neutral-dark mb-4">The "Tower of Babel" Problem</h3>
+                            <p class="text-gray-600 mb-6 text-lg leading-relaxed">
+                                Factory floors are messy. You have a 20-year-old Japanese stamping press next to a brand new German CNC. They speak different languages (Analog, Modbus, OPC UA). Usually, this forces manual data entry—where accuracy dies.
+                            </p>
+                            <div class="bg-white p-6 rounded-card shadow-sm border-l-4 border-primary">
+                                <h4 class="font-bold text-primary mb-2 text-sm">The Digiwin Fix:</h4>
+                                <p class="text-sm text-gray-600">
+                                    Our hardware gateway translates all these signals into a unified JSON stream before it ever hits the ERP.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: History & Stability -->
+        <section id="history" class="py-24 bg-white border-t border-gray-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-bold text-neutral-dark">Stability You Can Bank On</h2>
+                    <p class="text-gray-500 mt-2">Your clients are safe. We have the pedigree to support them for decades.</p>
+                </div>
+
+                <!-- Timeline -->
+                <div class="relative py-10">
+                    <div class="hidden md:block absolute top-1/2 left-0 w-full h-1 bg-gray-100 -translate-y-1/2"></div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-5 gap-8 relative z-10">
+                        <!-- 1982 -->
+                        <div class="flex flex-col items-center group">
+                            <div class="w-4 h-4 rounded-full bg-gray-300 group-hover:bg-primary transition mb-4 ring-4 ring-white"></div>
+                            <div class="text-2xl font-bold text-gray-300 group-hover:text-primary transition">1982</div>
+                            <div class="text-xs font-bold text-gray-500 mt-2 uppercase tracking-wide">Established</div>
+                        </div>
+                        <!-- 2014 -->
+                        <div class="flex flex-col items-center group">
+                            <div class="w-4 h-4 rounded-full bg-gray-300 group-hover:bg-primary transition mb-4 ring-4 ring-white"></div>
+                            <div class="text-2xl font-bold text-gray-300 group-hover:text-primary transition">2014</div>
+                            <div class="text-xs font-bold text-gray-500 mt-2 uppercase tracking-wide">IPO (300378)</div>
+                        </div>
+                        <!-- 2019 -->
+                        <div class="flex flex-col items-center group">
+                            <div class="w-4 h-4 rounded-full bg-gray-300 group-hover:bg-primary transition mb-4 ring-4 ring-white"></div>
+                            <div class="text-2xl font-bold text-gray-300 group-hover:text-primary transition">2019</div>
+                            <div class="text-xs font-bold text-gray-500 mt-2 uppercase tracking-wide">Digiwin Thailand</div>
+                        </div>
+                        <!-- 2020 (Foxconn) -->
+                        <div class="flex flex-col items-center group">
+                            <div class="w-6 h-6 rounded-full bg-accent mb-4 ring-4 ring-orange-100 animate-pulse"></div>
+                            <div class="text-2xl font-bold text-accent">2020</div>
+                            <div class="text-xs font-bold text-accent mt-2 uppercase tracking-wide">Foxconn Invests</div>
+                        </div>
+                        <!-- Today -->
+                        <div class="flex flex-col items-center group">
+                            <div class="w-4 h-4 rounded-full bg-primary transition mb-4 ring-4 ring-white"></div>
+                            <div class="text-2xl font-bold text-primary">Today</div>
+                            <div class="text-xs font-bold text-gray-500 mt-2 uppercase tracking-wide">50,000+ Clients</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- COMPONENT: Footer (Global) -->
+    <footer class="bg-gray-900 text-gray-400 py-16 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div class="col-span-1 md:col-span-1">
+                    <div class="flex items-center gap-2 mb-6">
+                        <div class="w-8 h-8 bg-primary rounded-btn flex items-center justify-center text-white font-bold">D</div>
+                        <span class="font-bold text-xl text-white">Digiwin<span class="text-primary">Soft</span></span>
+                    </div>
+                    <p class="text-sm leading-relaxed">
+                        Asia's leading manufacturing ERP & IIoT provider. Empowering Thai industries with smart factory solutions since 1982.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-bold mb-6 uppercase text-sm tracking-wider">Ecosystem</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#" class="hover:text-white transition-colors">T100 Enterprise ERP</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">eMES & AIoT</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Workflow AiGP</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Logistics WMS</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-6 uppercase text-sm tracking-wider">Partner</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#" class="hover:text-white transition-colors">Program Benefits</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Success Stories</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Partner Portal</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Apply Now</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-6 uppercase text-sm tracking-wider">Bangna HQ</h4>
+                    <p class="text-sm leading-relaxed mb-4">
+                        26th Floor, Bhiraj Tower at EmQuartier<br>
+                        689 Sukhumvit Road, Bangkok 10110
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-facebook fa-lg"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-linkedin fa-lg"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-youtube fa-lg"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs">
+                <p>&copy; 2025 Digiwin Software (Thailand) Co., Ltd.</p>
+                <div class="flex gap-6 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-white">Privacy Policy</a>
+                    <a href="#" class="hover:text-white">Code of Conduct</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

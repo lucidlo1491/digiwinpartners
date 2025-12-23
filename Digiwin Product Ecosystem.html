@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digiwin Product Ecosystem - The Full Stack</title>
+    
+    <!-- Design System: External Libraries -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Segoe+UI&display=swap" rel="stylesheet">
+
+    <!-- Design System: Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            DEFAULT: '#00b2e4', // Digiwin Blue
+                            dark: '#0090b8',    // Hover State
+                            light: '#33c2ea',
+                        },
+                        accent: {
+                            DEFAULT: '#ff6b35', // Orange (Foxconn/CTA)
+                            hover: '#e55a2b',
+                        },
+                        neutral: {
+                            text: '#4a4a4a',    // Body Text
+                            bg: '#f5f5f5',      // Light Background
+                            dark: '#1a1a1a',    // Headings
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Segoe UI"', 'Roboto', 'sans-serif'],
+                    },
+                    borderRadius: {
+                        'btn': '8px',
+                        'card': '12px',
+                    },
+                    boxShadow: {
+                        'card': '0 4px 6px rgba(0, 0, 0, 0.05)',
+                        'hover': '0 10px 15px rgba(0, 0, 0, 0.1)',
+                        'glow': '0 0 20px rgba(0, 178, 228, 0.15)'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Global Styles */
+        body { font-family: 'Segoe UI', 'Roboto', sans-serif; color: #4a4a4a; }
+        
+        /* Hero Background */
+        .hero-bg {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+        }
+
+        /* 3D Stack Animation */
+        .stack-layer {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transform-style: preserve-3d;
+        }
+        .stack-container:hover .stack-layer {
+            transform: translateY(0) scale(1) !important;
+            opacity: 1 !important;
+        }
+
+        /* Card Hover */
+        .product-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body class="bg-white antialiased">
+
+    <!-- COMPONENT: Header/Navigation (Global) -->
+    <header class="fixed w-full bg-white/95 backdrop-blur-sm shadow-sm z-50 h-20 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex justify-between items-center">
+            <!-- Logo -->
+            <div class="flex items-center gap-2 cursor-pointer" onclick="window.location.href='home.html'">
+                <div class="w-10 h-10 bg-primary rounded-btn flex items-center justify-center text-white font-bold text-xl shadow-sm">D</div>
+                <div class="flex flex-col">
+                    <span class="font-bold text-xl text-neutral-dark leading-none">Digiwin<span class="text-primary">Soft</span></span>
+                    <span class="text-[10px] text-gray-500 tracking-widest uppercase">Thailand Partner</span>
+                </div>
+            </div>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex space-x-8">
+                <a href="#" class="text-neutral-text hover:text-primary font-medium text-sm transition-colors py-2 border-b-2 border-transparent hover:border-primary">Why Digiwin</a>
+                <a href="#" class="text-primary font-bold text-sm transition-colors py-2 border-b-2 border-primary">Product Ecosystem</a>
+                <a href="#" class="text-neutral-text hover:text-primary font-medium text-sm transition-colors py-2 border-b-2 border-transparent hover:border-primary">Industry Solutions</a>
+                <a href="#" class="text-neutral-text hover:text-primary font-medium text-sm transition-colors py-2 border-b-2 border-transparent hover:border-primary">Resources</a>
+            </nav>
+
+            <!-- CTA & Utility -->
+            <div class="flex items-center gap-4">
+                <div class="hidden md:flex text-sm text-gray-400 font-medium">
+                    <span class="hover:text-primary cursor-pointer">TH</span>
+                    <span class="mx-2">|</span>
+                    <span class="text-primary font-bold">EN</span>
+                </div>
+                <a href="#contact" class="bg-primary hover:bg-primary-dark text-white px-6 py-2.5 rounded-btn text-sm font-bold shadow-lg shadow-primary/30 transition-all transform hover:-translate-y-0.5">
+                    Become a Partner
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="pt-20">
+
+        <!-- SECTION: Hero (Full Stack) -->
+        <section class="hero-bg text-white py-24 relative overflow-hidden">
+            <!-- Grid Background -->
+            <div class="absolute inset-0 opacity-10" style="background-image: linear-gradient(#33c2ea 1px, transparent 1px), linear-gradient(90deg, #33c2ea 1px, transparent 1px); background-size: 40px 40px;"></div>
+            
+            <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center gap-12">
+                <!-- Text -->
+                <div class="md:w-1/2 z-10">
+                    <div class="inline-flex items-center px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary-light text-xs font-bold tracking-wide uppercase mb-6">
+                        <i class="fas fa-cubes mr-2"></i> Integrated Portfolio
+                    </div>
+                    <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-6">
+                        A Complete Stack.<br>
+                        From <span class="text-primary">Sensor</span> to <span class="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400">Boardroom</span>.
+                    </h1>
+                    <p class="text-lg text-gray-300 mb-8 max-w-lg leading-relaxed">
+                        Don't just sell ERP. Sell a Smart Factory Ecosystem. Capture more wallet share by offering a fully integrated suite that competitors can't match.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <button onclick="document.getElementById('hub').scrollIntoView({behavior: 'smooth'})" class="bg-primary hover:bg-primary-dark text-white px-8 py-3.5 rounded-btn font-bold text-base shadow-lg shadow-primary/30 transition-all transform hover:-translate-y-1">
+                            Explore Modules
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Visual Stack -->
+                <div class="md:w-1/2 z-10 flex justify-center h-[400px] items-center stack-container relative cursor-pointer group perspective-1000">
+                    <!-- Layer 1: Management -->
+                    <div class="absolute w-80 bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-card shadow-2xl stack-layer transform -translate-y-24 z-30 hover:bg-primary/20 transition-colors">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-xs font-bold text-primary-light tracking-widest">MANAGEMENT (IT)</span>
+                            <i class="fas fa-globe text-white/50"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white">T100 ERP</h3>
+                        <div class="mt-3 h-1 w-full bg-white/10 rounded-full overflow-hidden">
+                            <div class="h-full bg-primary-light w-3/4"></div>
+                        </div>
+                    </div>
+
+                    <!-- Layer 2: Operations -->
+                    <div class="absolute w-80 bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-card shadow-2xl stack-layer transform translate-y-0 scale-95 z-20 hover:bg-accent/20 transition-colors">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-xs font-bold text-accent tracking-widest">OPERATIONS</span>
+                            <i class="fas fa-cogs text-white/50"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white">eMES & WMS</h3>
+                        <div class="mt-3 h-1 w-full bg-white/10 rounded-full overflow-hidden">
+                            <div class="h-full bg-accent w-1/2"></div>
+                        </div>
+                    </div>
+
+                    <!-- Layer 3: Physical -->
+                    <div class="absolute w-80 bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-card shadow-2xl stack-layer transform translate-y-24 scale-90 z-10 hover:bg-green-500/20 transition-colors">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-xs font-bold text-green-400 tracking-widest">PHYSICAL (OT)</span>
+                            <i class="fas fa-microchip text-white/50"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white">AIoT Gateway</h3>
+                        <div class="mt-3 h-1 w-full bg-white/10 rounded-full overflow-hidden">
+                            <div class="h-full bg-green-400 w-full animate-pulse"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: Product Grid -->
+        <section id="hub" class="py-24 bg-neutral-bg">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-bold text-neutral-dark mb-4">The Revenue Engines</h2>
+                    <p class="text-gray-500 max-w-2xl mx-auto">
+                        Select a module to see how it fits your portfolio strategy.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    
+                    <!-- Card 1: T100 -->
+                    <div class="product-card bg-white rounded-card p-8 shadow-card border-t-4 border-primary group cursor-pointer">
+                        <div class="flex justify-between items-start mb-6">
+                            <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center text-primary text-2xl group-hover:bg-primary group-hover:text-white transition-colors">
+                                <i class="fas fa-building"></i>
+                            </div>
+                            <span class="px-3 py-1 bg-gray-100 text-gray-600 text-xs font-bold rounded-full uppercase">Tier 1 Alternative</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-neutral-dark mb-2">T100 Enterprise ERP</h3>
+                        <p class="text-sm font-bold text-primary mb-4">The Enterprise Backbone</p>
+                        <p class="text-gray-500 leading-relaxed mb-6 text-sm">
+                            Win the "Big Fish" clients. Built for multi-site groups requiring consolidated financials and global HQ management without the SAP price tag.
+                        </p>
+                        <a href="#" class="text-primary font-bold text-sm hover:underline flex items-center gap-2">
+                            Download Spec Sheet <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <!-- Card 2: eMES -->
+                    <div class="product-card bg-white rounded-card p-8 shadow-card border-t-4 border-accent group cursor-pointer">
+                        <div class="flex justify-between items-start mb-6">
+                            <div class="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center text-accent text-2xl group-hover:bg-accent group-hover:text-white transition-colors">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <span class="px-3 py-1 bg-gray-100 text-gray-600 text-xs font-bold rounded-full uppercase">Shop Floor IoT</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-neutral-dark mb-2">eMES & AIoT</h3>
+                        <p class="text-sm font-bold text-accent mb-4">The Shop Floor Enforcer</p>
+                        <p class="text-gray-500 leading-relaxed mb-6 text-sm">
+                            The cure for "Shadow Excel." Capture production data directly from machines (OEE, Scrap, Yield) to give owners real-time truth.
+                        </p>
+                        <a href="#" class="text-accent font-bold text-sm hover:underline flex items-center gap-2">
+                            Download Spec Sheet <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <!-- Card 3: WMS -->
+                    <div class="product-card bg-white rounded-card p-8 shadow-card border-t-4 border-green-500 group cursor-pointer">
+                        <div class="flex justify-between items-start mb-6">
+                            <div class="w-14 h-14 bg-green-50 rounded-xl flex items-center justify-center text-green-500 text-2xl group-hover:bg-green-500 group-hover:text-white transition-colors">
+                                <i class="fas fa-boxes"></i>
+                            </div>
+                            <span class="px-3 py-1 bg-gray-100 text-gray-600 text-xs font-bold rounded-full uppercase">Logistics</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-neutral-dark mb-2">Logistics WMS</h3>
+                        <p class="text-sm font-bold text-green-500 mb-4">The Inventory Shield</p>
+                        <p class="text-gray-500 leading-relaxed mb-6 text-sm">
+                            Solve "Ghost Inventory" problems. Advanced logic for Lot Tracking, FIFO, and Bin Management. Perfect for audit-fearing clients.
+                        </p>
+                        <a href="#" class="text-green-600 font-bold text-sm hover:underline flex items-center gap-2">
+                            Download Spec Sheet <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <!-- Card 4: AiGP -->
+                    <div class="product-card bg-white rounded-card p-8 shadow-card border-t-4 border-purple-500 group cursor-pointer">
+                        <div class="flex justify-between items-start mb-6">
+                            <div class="w-14 h-14 bg-purple-50 rounded-xl flex items-center justify-center text-purple-500 text-2xl group-hover:bg-purple-500 group-hover:text-white transition-colors">
+                                <i class="fas fa-bolt"></i>
+                            </div>
+                            <span class="px-3 py-1 bg-gray-100 text-gray-600 text-xs font-bold rounded-full uppercase">SME Rapid</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-neutral-dark mb-2">Workflow AiGP</h3>
+                        <p class="text-sm font-bold text-purple-500 mb-4">The SME Engine</p>
+                        <p class="text-gray-500 leading-relaxed mb-6 text-sm">
+                            Your "High-Velocity" Cash Cow. Rapid deployment (2-3 months) for Tier 2/3 markets with native Thai tax compliance.
+                        </p>
+                        <a href="#" class="text-purple-600 font-bold text-sm hover:underline flex items-center gap-2">
+                            Download Spec Sheet <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: Land & Expand Strategy -->
+        <section class="py-24 bg-white border-t border-gray-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col md:flex-row items-center gap-16">
+                    <!-- Strategy Text -->
+                    <div class="md:w-1/2">
+                        <h2 class="text-3xl font-bold text-neutral-dark mb-6">How the Ecosystem Multiplies Your Margin</h2>
+                        <p class="text-lg text-gray-500 mb-8">
+                            The "One-and-Done" project model is dead. With Digiwin, you adopt a <strong>"Land & Expand"</strong> strategy to triple your client LTV.
+                        </p>
+                        
+                        <div class="space-y-8">
+                            <div class="flex">
+                                <div class="flex-shrink-0 w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold">1</div>
+                                <div class="ml-4">
+                                    <h4 class="text-lg font-bold text-neutral-dark">Land with AiGP</h4>
+                                    <p class="text-sm text-gray-500 mt-1">Quick implementation. Immediate tax compliance value. Secure the client relationship.</p>
+                                </div>
+                            </div>
+                            <div class="flex">
+                                <div class="flex-shrink-0 w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center text-accent font-bold">2</div>
+                                <div class="ml-4">
+                                    <h4 class="text-lg font-bold text-neutral-dark">Expand with eMES</h4>
+                                    <p class="text-sm text-gray-500 mt-1">6 months later, upsell the "Shop Floor" module to solve production visibility issues.</p>
+                                </div>
+                            </div>
+                            <div class="flex">
+                                <div class="flex-shrink-0 w-10 h-10 rounded-full bg-green-100 flex items-center justify-center text-green-600 font-bold">3</div>
+                                <div class="ml-4">
+                                    <h4 class="text-lg font-bold text-neutral-dark">Secure with WMS</h4>
+                                    <p class="text-sm text-gray-500 mt-1">Add Logistics control. Deepen stickiness. The client is now fully digitized.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Chart Container -->
+                    <div class="md:w-1/2 w-full bg-neutral-bg rounded-card p-6 shadow-inner border border-gray-200">
+                        <div class="text-center text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">Cumulative Revenue Projection</div>
+                        <div class="relative h-64 w-full">
+                            <canvas id="revenueChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- COMPONENT: Footer (Global) -->
+    <footer class="bg-gray-900 text-gray-400 py-16 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div class="col-span-1 md:col-span-1">
+                    <div class="flex items-center gap-2 mb-6">
+                        <div class="w-8 h-8 bg-primary rounded-btn flex items-center justify-center text-white font-bold">D</div>
+                        <span class="font-bold text-xl text-white">Digiwin<span class="text-primary">Soft</span></span>
+                    </div>
+                    <p class="text-sm leading-relaxed">
+                        Asia's leading manufacturing ERP & IIoT provider. Empowering Thai industries with smart factory solutions since 1982.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-bold mb-6 uppercase text-sm tracking-wider">Ecosystem</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#" class="hover:text-white transition-colors">T100 Enterprise ERP</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">eMES & AIoT</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Workflow AiGP</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Logistics WMS</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-6 uppercase text-sm tracking-wider">Partner</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#" class="hover:text-white transition-colors">Program Benefits</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Success Stories</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Partner Portal</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Apply Now</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-6 uppercase text-sm tracking-wider">Bangna HQ</h4>
+                    <p class="text-sm leading-relaxed mb-4">
+                        26th Floor, Bhiraj Tower at EmQuartier<br>
+                        689 Sukhumvit Road, Bangkok 10110
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-facebook fa-lg"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-linkedin fa-lg"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-youtube fa-lg"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs">
+                <p>&copy; 2025 Digiwin Software (Thailand) Co., Ltd.</p>
+                <div class="flex gap-6 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-white">Privacy Policy</a>
+                    <a href="#" class="hover:text-white">Code of Conduct</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chart Logic -->
+    <script>
+        const ctx = document.getElementById('revenueChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Year 1', 'Year 2', 'Year 3', 'Year 4'],
+                datasets: [{
+                    label: 'Digiwin Full Stack',
+                    data: [100, 180, 320, 550],
+                    borderColor: '#00b2e4',
+                    backgroundColor: 'rgba(0, 178, 228, 0.1)',
+                    borderWidth: 3,
+                    fill: true,
+                    tension: 0.4
+                }, {
+                    label: 'Single ERP Vendor',
+                    data: [100, 110, 120, 130],
+                    borderColor: '#9ca3af',
+                    borderWidth: 2,
+                    borderDash: [5, 5],
+                    fill: false,
+                    tension: 0.4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { position: 'bottom' }
+                },
+                scales: {
+                    y: { beginAtZero: true, grid: { display: false } },
+                    x: { grid: { display: false } }
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>

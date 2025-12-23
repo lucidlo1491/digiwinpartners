@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digiwin Partner Program - Inquiry</title>
+    
+    <!-- Design System: External Libraries -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Segoe+UI&display=swap" rel="stylesheet">
+
+    <!-- Design System: Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            DEFAULT: '#00b2e4', // Digiwin Blue
+                            dark: '#0090b8',    // Hover State
+                            light: '#33c2ea',
+                        },
+                        accent: {
+                            DEFAULT: '#ff6b35', // Orange (Foxconn/CTA)
+                            hover: '#e55a2b',
+                        },
+                        neutral: {
+                            text: '#4a4a4a',    // Body Text
+                            bg: '#f5f5f5',      // Light Background
+                            dark: '#1a1a1a',    // Headings
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Segoe UI"', 'Roboto', 'sans-serif'],
+                    },
+                    borderRadius: {
+                        'btn': '8px',
+                        'card': '12px',
+                    },
+                    boxShadow: {
+                        'card': '0 4px 6px rgba(0, 0, 0, 0.05)',
+                        'hover': '0 10px 15px rgba(0, 0, 0, 0.1)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Global Styles */
+        body { font-family: 'Segoe UI', 'Roboto', sans-serif; color: #4a4a4a; }
+        
+        /* Hero Background */
+        .hero-bg {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+        }
+
+        /* Form Input Styles */
+        .form-input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: all 0.2s;
+        }
+        .form-input:focus {
+            outline: none;
+            border-color: #00b2e4;
+            box-shadow: 0 0 0 3px rgba(0, 178, 228, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-white antialiased">
+
+    <!-- COMPONENT: Header/Navigation (Global) -->
+    <header class="fixed w-full bg-white/95 backdrop-blur-sm shadow-sm z-50 h-20 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex justify-between items-center">
+            <!-- Logo -->
+            <div class="flex items-center gap-2 cursor-pointer" onclick="window.location.href='home.html'">
+                <div class="w-10 h-10 bg-primary rounded-btn flex items-center justify-center text-white font-bold text-xl shadow-sm">D</div>
+                <div class="flex flex-col">
+                    <span class="font-bold text-xl text-neutral-dark leading-none">Digiwin<span class="text-primary">Soft</span></span>
+                    <span class="text-[10px] text-gray-500 tracking-widest uppercase">Thailand Partner</span>
+                </div>
+            </div>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex space-x-8">
+                <a href="#" class="text-neutral-text hover:text-primary font-medium text-sm transition-colors py-2 border-b-2 border-transparent hover:border-primary">Why Digiwin</a>
+                <a href="#" class="text-neutral-text hover:text-primary font-medium text-sm transition-colors py-2 border-b-2 border-transparent hover:border-primary">Product Ecosystem</a>
+                <a href="#" class="text-neutral-text hover:text-primary font-medium text-sm transition-colors py-2 border-b-2 border-transparent hover:border-primary">Industry Solutions</a>
+                <a href="#" class="text-neutral-text hover:text-primary font-medium text-sm transition-colors py-2 border-b-2 border-transparent hover:border-primary">Resources</a>
+            </nav>
+
+            <!-- CTA & Utility -->
+            <div class="flex items-center gap-4">
+                <div class="hidden md:flex text-sm text-gray-400 font-medium">
+                    <span class="hover:text-primary cursor-pointer">TH</span>
+                    <span class="mx-2">|</span>
+                    <span class="text-primary font-bold">EN</span>
+                </div>
+                <!-- Button Hidden on Contact Page to avoid redundancy -->
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="pt-20">
+
+        <!-- SECTION: Hero (Executive Appeal) -->
+        <section class="hero-bg text-white py-20 relative overflow-hidden">
+             <div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(#00b2e4 1px, transparent 1px); background-size: 24px 24px;"></div>
+             
+             <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                 <h1 class="text-3xl md:text-5xl font-bold mb-6">Let's Discuss Your Project Margins</h1>
+                 <p class="text-xl text-gray-300 max-w-2xl mx-auto">
+                     You are looking for a business partner, not just a software vendor. Talk to our Country Manager about securing an exclusive territory in the EEC.
+                 </p>
+             </div>
+        </section>
+
+        <!-- SECTION: Contact Form & Info -->
+        <section class="py-20 bg-neutral-bg">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col md:flex-row">
+                    
+                    <!-- Left: Direct Contact Info (Trust Signal) -->
+                    <div class="md:w-2/5 bg-primary p-12 text-white flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-2xl font-bold mb-8">Digiwin Thailand HQ</h3>
+                            <div class="space-y-6">
+                                <div class="flex items-start gap-4">
+                                    <i class="fas fa-map-marker-alt mt-1 text-primary-light text-xl"></i>
+                                    <p class="text-sm leading-relaxed text-white/90">
+                                        26th Floor, Bhiraj Tower at EmQuartier<br>
+                                        689 Sukhumvit Road, Khlong Tan Nuea<br>
+                                        Watthana, Bangkok 10110
+                                    </p>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <i class="fas fa-phone-alt text-primary-light text-xl"></i>
+                                    <p class="text-sm font-bold">+66 (0) 2-000-0000</p>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <i class="fas fa-envelope text-primary-light text-xl"></i>
+                                    <p class="text-sm">partners.th@digiwin.com</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-12">
+                            <h4 class="font-bold text-sm uppercase tracking-wider mb-4 text-primary-light">We Speak Your Language</h4>
+                            <div class="flex gap-3">
+                                <span class="px-3 py-1 bg-white/20 rounded text-xs font-bold">Thai</span>
+                                <span class="px-3 py-1 bg-white/20 rounded text-xs font-bold">English</span>
+                                <span class="px-3 py-1 bg-white/20 rounded text-xs font-bold">Mandarin</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Pre-Qualification Form -->
+                    <div class="md:w-3/5 p-12">
+                        <div class="mb-8">
+                            <h2 class="text-2xl font-bold text-neutral-dark mb-2">Request Partner Kit</h2>
+                            <p class="text-sm text-gray-500">Tell us a bit about your current practice so we can assign the right Solution Architect.</p>
+                        </div>
+
+                        <form class="space-y-6">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-xs font-bold text-gray-500 uppercase mb-2">First Name</label>
+                                    <input type="text" class="form-input" placeholder="Khun...">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-gray-500 uppercase mb-2">Last Name</label>
+                                    <input type="text" class="form-input" placeholder="Somchai">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold text-gray-500 uppercase mb-2">Company Name</label>
+                                <input type="text" class="form-input" placeholder="Your Consulting Firm Co., Ltd.">
+                            </div>
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-xs font-bold text-gray-500 uppercase mb-2">Current Team Size</label>
+                                    <select class="form-input bg-white">
+                                        <option>1-10 Consultants</option>
+                                        <option>11-30 Consultants</option>
+                                        <option>31-50 Consultants</option>
+                                        <option>50+ Consultants</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-gray-500 uppercase mb-2">Primary Industry</label>
+                                    <select class="form-input bg-white">
+                                        <option>Automotive</option>
+                                        <option>Electronics</option>
+                                        <option>Metal & Plastic</option>
+                                        <option>Food & Bev</option>
+                                        <option>General Trading</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold text-gray-500 uppercase mb-2">Message (Optional)</label>
+                                <textarea class="form-input h-32" placeholder="e.g. I am interested in the T100 and eMES modules for my automotive clients..."></textarea>
+                            </div>
+
+                            <button type="button" class="w-full bg-accent hover:bg-accent-hover text-white font-bold py-4 rounded-btn shadow-lg transition-all transform hover:-translate-y-1">
+                                Submit Inquiry
+                            </button>
+                            
+                            <p class="text-center text-xs text-gray-400 mt-4">
+                                By submitting, you agree to our Code of Conduct. Your data is protected.
+                            </p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- COMPONENT: Footer (Global) -->
+    <footer class="bg-gray-900 text-gray-400 py-16 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div class="col-span-1 md:col-span-1">
+                    <div class="flex items-center gap-2 mb-6">
+                        <div class="w-8 h-8 bg-primary rounded-btn flex items-center justify-center text-white font-bold">D</div>
+                        <span class="font-bold text-xl text-white">Digiwin<span class="text-primary">Soft</span></span>
+                    </div>
+                    <p class="text-sm leading-relaxed">
+                        Asia's leading manufacturing ERP & IIoT provider. Empowering Thai industries with smart factory solutions since 1982.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-bold mb-6 uppercase text-sm tracking-wider">Ecosystem</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#" class="hover:text-white transition-colors">T100 Enterprise ERP</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">eMES & AIoT</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Workflow AiGP</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Logistics WMS</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-6 uppercase text-sm tracking-wider">Partner</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#" class="hover:text-white transition-colors">Program Benefits</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Success Stories</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Partner Portal</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Apply Now</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-6 uppercase text-sm tracking-wider">Bangna HQ</h4>
+                    <p class="text-sm leading-relaxed mb-4">
+                        26th Floor, Bhiraj Tower at EmQuartier<br>
+                        689 Sukhumvit Road, Bangkok 10110
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-facebook fa-lg"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-linkedin fa-lg"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-youtube fa-lg"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs">
+                <p>&copy; 2025 Digiwin Software (Thailand) Co., Ltd.</p>
+                <div class="flex gap-6 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-white">Privacy Policy</a>
+                    <a href="#" class="hover:text-white">Code of Conduct</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
