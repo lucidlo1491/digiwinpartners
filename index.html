@@ -51,13 +51,6 @@
         /* Global Styles */
         body { font-family: 'Segoe UI', 'Roboto', sans-serif; color: #4a4a4a; }
         
-        /* Utility Classes */
-        .text-gradient {
-            background: linear-gradient(to right, #00b2e4, #0090b8);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        
         /* Hero Background Split */
         .hero-bg {
             background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
@@ -66,7 +59,7 @@
 </head>
 <body class="bg-white antialiased">
 
-<!-- COMPONENT: Header/Navigation (Global) -->
+    <!-- COMPONENT: Header/Navigation (Global) -->
     <header class="fixed w-full bg-white/95 backdrop-blur-sm shadow-sm z-50 h-20 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex justify-between items-center">
             <!-- Logo -->
@@ -80,16 +73,9 @@
 
             <!-- Desktop Nav -->
             <nav class="hidden md:flex space-x-8">
-                <!-- LINK 1: Why Digiwin -->
                 <a href="why_digiwin.html" class="text-neutral-text hover:text-primary font-medium text-sm transition-colors py-2 border-b-2 border-transparent hover:border-primary">Why Digiwin</a>
-                
-                <!-- LINK 2: Product Ecosystem -->
                 <a href="product_ecosystem.html" class="text-neutral-text hover:text-primary font-medium text-sm transition-colors py-2 border-b-2 border-transparent hover:border-primary">Product Ecosystem</a>
-                
-                <!-- LINK 3: Industry Solutions -->
                 <a href="industry_solutions.html" class="text-neutral-text hover:text-primary font-medium text-sm transition-colors py-2 border-b-2 border-transparent hover:border-primary">Industry Solutions</a>
-                
-                <!-- LINK 4: Resources (Placeholder) -->
                 <a href="#" class="text-neutral-text hover:text-primary font-medium text-sm transition-colors py-2 border-b-2 border-transparent hover:border-primary">Resources</a>
             </nav>
 
@@ -100,13 +86,13 @@
                     <span class="mx-2">|</span>
                     <span class="text-primary font-bold">EN</span>
                 </div>
-                <!-- LINK 5: Contact Page -->
                 <a href="contact_partner.html" class="bg-primary hover:bg-primary-dark text-white px-6 py-2.5 rounded-btn text-sm font-bold shadow-lg shadow-primary/30 transition-all transform hover:-translate-y-0.5">
                     Become a Partner
                 </a>
             </div>
         </div>
     </header>
+
     <!-- MAIN CONTENT -->
     <main class="pt-20">
 
@@ -132,10 +118,10 @@
                         Stop the margin squeeze. Build a scalable, high-profit practice with Asia's leading Manufacturing ERP & AIoT Platform. Secure recurring revenue and exclusive territories in Thailand’s EEC.
                     </p>
                     <div class="flex flex-wrap gap-4">
-                        <a href="#economics" class="bg-primary hover:bg-primary-dark text-white px-8 py-3.5 rounded-btn font-bold text-base shadow-lg shadow-primary/30 transition-all transform hover:-translate-y-1">
+                        <a href="contact_partner.html" class="bg-primary hover:bg-primary-dark text-white px-8 py-3.5 rounded-btn font-bold text-base shadow-lg shadow-primary/30 transition-all transform hover:-translate-y-1">
                             View Partner Economics
                         </a>
-                        <a href="#video" class="bg-white/10 hover:bg-white/20 text-white border border-white/20 px-8 py-3.5 rounded-btn font-medium text-base backdrop-blur-sm transition-all flex items-center gap-2">
+                        <a href="why_digiwin.html" class="bg-white/10 hover:bg-white/20 text-white border border-white/20 px-8 py-3.5 rounded-btn font-medium text-base backdrop-blur-sm transition-all flex items-center gap-2">
                             <i class="fas fa-play text-accent"></i> Strategy Video
                         </a>
                     </div>
@@ -234,22 +220,22 @@
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
                     <!-- Feature 1 -->
-                    <div class="flex flex-col items-center text-center group">
+                    <div class="flex flex-col items-center text-center group cursor-pointer" onclick="window.location.href='why_digiwin.html'">
                         <div class="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-all duration-300 text-primary text-3xl">
                             <i class="fas fa-gavel"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-neutral-dark mb-3">Localization Moat</h3>
+                        <h3 class="text-xl font-bold text-neutral-dark mb-3 group-hover:text-primary transition-colors">Localization Moat</h3>
                         <p class="text-gray-500 text-sm leading-relaxed max-w-xs">
                             Native support for Thai Revenue Dept (e-Tax, VAT) and Labor Law. Eliminate the "Customization Tax" of foreign software.
                         </p>
                     </div>
 
                     <!-- Feature 2 -->
-                    <div class="flex flex-col items-center text-center group">
+                    <div class="flex flex-col items-center text-center group cursor-pointer" onclick="window.location.href='why_digiwin.html'">
                         <div class="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-all duration-300 text-primary text-3xl">
                             <i class="fas fa-network-wired"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-neutral-dark mb-3">Close the "Automation Gap"</h3>
+                        <h3 class="text-xl font-bold text-neutral-dark mb-3 group-hover:text-primary transition-colors">Close the "Automation Gap"</h3>
                         <p class="text-gray-500 text-sm leading-relaxed max-w-xs">
                             Our AIoT & eMES solutions pull data directly from machines. Sell "Real-Time Truth" instead of just admin screens.
                         </p>
@@ -313,9 +299,9 @@
                     Don't just buy software. Join a partnership designed for business owners.
                 </p>
                 <div class="flex flex-col sm:flex-row justify-center gap-4">
-                    <button class="bg-white text-primary hover:bg-gray-50 px-8 py-4 rounded-btn font-bold text-lg shadow-lg transition-transform transform hover:-translate-y-1">
+                    <a href="contact_partner.html" class="bg-white text-primary hover:bg-gray-50 px-8 py-4 rounded-btn font-bold text-lg shadow-lg transition-transform transform hover:-translate-y-1">
                         Talk to Country Manager
-                    </button>
+                    </a>
                     <button class="bg-primary-dark border border-white/20 text-white hover:bg-primary-dark/80 px-8 py-4 rounded-btn font-medium text-lg transition-colors">
                         Download Partner Kit
                     </button>
@@ -342,10 +328,10 @@
                 <div>
                     <h4 class="text-white font-bold mb-6 uppercase text-sm tracking-wider">Ecosystem</h4>
                     <ul class="space-y-3 text-sm">
-                        <li><a href="#" class="hover:text-white transition-colors">T100 Enterprise ERP</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">eMES & AIoT</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Workflow AiGP</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Logistics WMS</a></li>
+                        <li><a href="product_ecosystem.html" class="hover:text-white transition-colors">T100 Enterprise ERP</a></li>
+                        <li><a href="product_ecosystem.html" class="hover:text-white transition-colors">eMES & AIoT</a></li>
+                        <li><a href="product_ecosystem.html" class="hover:text-white transition-colors">Workflow AiGP</a></li>
+                        <li><a href="product_ecosystem.html" class="hover:text-white transition-colors">Logistics WMS</a></li>
                     </ul>
                 </div>
 
@@ -355,7 +341,7 @@
                         <li><a href="#" class="hover:text-white transition-colors">Program Benefits</a></li>
                         <li><a href="#" class="hover:text-white transition-colors">Success Stories</a></li>
                         <li><a href="#" class="hover:text-white transition-colors">Partner Portal</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Apply Now</a></li>
+                        <li><a href="contact_partner.html" class="hover:text-white transition-colors">Apply Now</a></li>
                     </ul>
                 </div>
 
